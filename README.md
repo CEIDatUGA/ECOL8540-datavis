@@ -29,9 +29,9 @@ visualization in R, with examples drawn from ecology and epidemiology.
 Topics include visualizing high-dimensional data, mapping, color,
 interactive visualizations, and workflows for publication-ready figures.
 
-#### Learning objectives
+## Learning objectives
 
-#### Schedule
+## Schedule
 
 **DAY 1: Monday, May 23**
 
@@ -75,7 +75,7 @@ interactive visualizations, and workflows for publication-ready figures.
 10:30 Break  
 10:40 Presentation of group projects
 
-#### Lectures
+## Lectures
 
 1.  Introduction (Drake)  
 2.  Data & Image Models (Marty)
@@ -84,7 +84,7 @@ interactive visualizations, and workflows for publication-ready figures.
 5.  Perception (Marty)
 6.  Mapping (Drake)
 
-#### Exercises
+## Exercises
 
 1.  Figure redesign (no code) (Eric)  
 2.  Annotated time series / multi time series (Eric)  
@@ -95,7 +95,7 @@ interactive visualizations, and workflows for publication-ready figures.
 5.  Workflows (Eric)  
 6.  Map (john)
 
-#### Group projects (John)
+## Group projects (John)
 
 5 groups of 4, 6 topics:
 
