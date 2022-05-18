@@ -21,7 +21,8 @@ Monday, May 23, 9am-5pm
 Tuesday, May 24, 9am-5pm  
 Wednesday, May 25, 9am-12pm
 
-INSTRUCTORS John Drake (<jdrake@uga.edu>)  
+INSTRUCTORS
+John Drake (<jdrake@uga.edu>)  
 Éric Marty (<emarty@uga.edu>)
 
 This module presents basic principles and best practices for data
@@ -96,7 +97,7 @@ types](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/lectures/3_char
     2d heatmap. Issues: upper triangle, clustering, ordering, x = beta,
     y = virulence (model with disease induced mortality), R0 = color  
 5.  Workflows (Eric)  
-6.  Map (john)
+6.  Map (John)
 
 ## Group projects (John)
 
@@ -105,8 +106,8 @@ types](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/lectures/3_char
 -   COVID-19: Compare county and state-level patterns over time for the
     state of GA  
 -   COVID-19: Compare cases and mortality over time  
--   West nile virus: County level virus data over time
--   Lime disease: advance in last 2 decades
+-   West Nile virus: County level virus data over time
+-   Lyme disease: advance in last 2 decades
 -   Stochastic SIR model:
     -   summarize epidemic trajectories, spaghetti plots, confidence
         intervals, distributions, etc.
