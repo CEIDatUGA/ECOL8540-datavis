@@ -32,4 +32,10 @@ Place any needed images in `lectures/` or link to a URL.
 <small>caption</small>
 ::::
 
+## Scatter plots
+
+```{r}
+plot(cars)
+```
+
 
