@@ -46,7 +46,8 @@ interactive visualizations, and workflows for publication-ready figures.
 
 12:00 Lunch
 
-1:30 Lecture: [Chart types]()  
+1:30 Lecture: [Chart
+types](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/lectures/3_chart_types.html)  
 2:10 Excercise: [Exercise 3]()  
 2:50 Break
 
@@ -65,7 +66,8 @@ interactive visualizations, and workflows for publication-ready figures.
 12:00 Lunch
 
 1:30 Lecture: [Mapping]()  
-2:10 Excercise: [Exercise 6]()  
+2:10 Excercise: [Exercise
+6](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/lectures/6_maps.html)  
 2:50 Break
 
 3:00 Group projects

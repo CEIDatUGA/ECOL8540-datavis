@@ -1,0 +1,43 @@
+---
+title: "Ecology 8540<br>Computational Workshops"
+subtitle: "Module 2: Data visualization for ecology & epidemiology"
+author: "John Drake and Éric Marty "
+date: May 23, 2021<br>Materials at <https://github.com/CEIDatUGA/ECOL8540-datavis>
+output:
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+    transition: 0.1
+    css: main.css
+    includes:
+      in_header: header.html
+    self_contained: true
+---
+
+```{r include=FALSE}
+library(magrittr)
+library(knitr)
+library(kableExtra)
+```
+
+# Maps
+
+## Slide title
+
+Place any needed images in `lectures/` or link to a URL.
+
+:::: {.flexbox .vcenter}
+![](image.png)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Heatmap.png/560px-Heatmap.png)
+<small>caption</small>
+::::
+
+## Slide title
+
+text
+
+```{r}
+# code chunk
+```
+
+text
