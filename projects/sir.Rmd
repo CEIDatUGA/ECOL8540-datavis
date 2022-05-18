@@ -1,0 +1,20 @@
+---
+title: "Summarizing realizations of stochastic models"
+author: "John M. Drake"
+date: "May 23, 2022"
+output: pdf_document
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Differential equations are used to represent contagion processes in a family of models known as *compartmental models*.
+When the size of a given compartment (e.g. number of infected individuals) is small such an epidemic is subject to considerable intrinsic noise known as *demographic stochasticity*.
+Demographic stochasticity may be important even in large populations and may be studied using stochastic models.
+A familiar algorithm for stochastic solution of compartmental models is Gillespie's direct method.
+An R implementation of Gillespie's direct method is available from a [workshop exercise](http://daphnia.ecology.uga.edu/drakelab/wp-content/uploads/2021/08/stochastic-simulation.pdf) that many people in this class have probably seen before.
+A general problem when studying stochastic model solutions is to summarize various components of uncertainty, including parameter uncertainty and the uncertainty that results from random variation in stochastic processes.
+
+Your task is to create a visualization to understand the behavior of the stochastic SIR model. Your figure should simultaneously communicate something about the variability of epidemics in large and small populations, at two or more different values of a key parameter, and due to demographic stochasticity. How does the variation due to demographic stochasticity change as the total population size increases? How important is information about the initial condition of the epidemic? How important is having precise estimates of model parameters? How will you summarize and communicate ideas about the "shape" of epidemics?

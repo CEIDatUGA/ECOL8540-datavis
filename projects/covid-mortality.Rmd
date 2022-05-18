@@ -1,0 +1,24 @@
+---
+title: "Transmission of SARS-CoV-2 and mortality of COVID-19"
+author: "John M. Drake"
+date: "May 23, 2022"
+output: pdf_document
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+COVID-19 is a respiratory diseases caused by the virus SARS-CoV-2.
+SARS-CoV-2 originated in Wuhan, China in late 2019 and subsequently caused a worldwide pandemic leading to the death of tens of millions of people.
+Vaccines for SARS-CoV-2 first became available in late 2020. 
+SARS-CoV-2 vaccines are strongly protective against severe illness and death.
+As a result, since early 2021 there has been a decoupling between the number of SARS-CoV-2 cases and mortality due to COVID-19.
+
+The UGA COVID-19 working group has created a tracker allowing the user to visualize trends and download data sourced from various providers.
+These data may be accessed [online](https://www.covid19.uga.edu/tracker.html).
+Your task is to create a visualization to investigate and quantify the decoupling of SARS-CoV-2 cases and mortality in the US.
+What pattern of decoupling do you observe?
+Did this decoupling happen in different ways in different parts of the country?
+Does the national average reflect state-level trends?

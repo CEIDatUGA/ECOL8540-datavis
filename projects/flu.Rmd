@@ -1,0 +1,21 @@
+---
+title: "Influenza seasonality in the U.S."
+author: "John M. Drake"
+date: "May 23, 2022"
+output: pdf_document
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Influenza is a contagious, seasonal respiratory illness caused by the Influenza A and Influenza B viruses.
+The influenza season typically begins in the late fall and peaks in the winter months in the Northern hemisphere.
+It is estimated that the burden of seasonal flu illness in the US is in the tens of millions, leading to tens of thousands of deaths annually.
+State level data on the burden of flu in the US is available from [Flu View Interactive](https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html), a dashboard to access data from the CDC Influenza-like illness surveillance network (aka ILINet).
+From the dashboard, you can select a level of data aggregation, time period, and data source.
+Your task is to create a visualization to investigate the stability of the seasonal flu pattern in the US from 2010 to 2022.
+How much variation is there from year to year in when the flu season occurs?
+How much variation is there from state to state?
+Is there a relationship between the timing of the flu season and the burden in previous years?
