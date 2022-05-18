@@ -22,22 +22,302 @@ library(kableExtra)
 
 # Maps
 
-## Slide title
 
-Place any needed images in `lectures/` or link to a URL.
+## {.flexbox .vcenter}
 
-:::: {.flexbox .vcenter}
-![](image.png)
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Heatmap.png/560px-Heatmap.png)
-<small>caption</small>
+![](http://i.dailymail.co.uk/i/pix/2010/05/05/article-1272921-093BA55C000005DC-175_634x426.jpg)  
+<small>Henricus Martelus, WORLD MAP, c1490</small>
+
+## {.flexbox .vcenter}
+![](https://upload.wikimedia.org/wikipedia/commons/2/27/Snow-cholera-map-1.jpg)  
+<small>John Snow: Mapped positions of deaths from cholera in London.  
+The map revealed a cluster of cases around a water pump, with density of cases  
+decreasing with distance from the pump. 1854.</small>
+
+## {.flexbox .vcenter}
+
+![](https://upload.wikimedia.org/wikipedia/commons/8/80/Descriptive_map_of_London_poverty%2C_1889_Wellcome_L0074435.jpg)  
+<small>Charles Booth: Descriptive map of London poverty, 1889. [info](https://commons.wikimedia.org/wiki/File:Descriptive_map_of_London_poverty,_1889_Wellcome_L0074435.jpg)</small>
+
+## {.flexbox .vcenter}
+
+<iframe src="https://earth.nullschool.net"></iframe>
+<https://earth.nullschool.net>
+
+## Map Projections
+
+A **Projection** is a systematic (mathematical) "stretching" of the surface of the sphere onto a flat plane.  Every projection preserves some aspects of the geometry and distorts other aspects.  
+
+Therefore, there is no truthful map of the earth.
+
+**3 categories of Map Projections:**
+
+* Azimuthal
+	* Preserves direction and distance
+* Equal Area
+	* Preserves area
+* Conformal
+	* Preserves local angles (straight lines on the sphere look straight on the plane.)
+
+[Wikipedia: Map Projections](https://en.wikipedia.org/wiki/Map_projection)
+
+## Map Projections {.flexbox}
+
+* Azimuthal (Preserves direction and distance)
+	* [example: "Azimuthal Equidistant"](http://en.wikipedia.org/wiki/Azimuthal_equidistant_projection)
+
+![](images/az-eq.png)  
+
+## Map Projections {.flexbox}
+
+* Equal Area (Preserves area)
+	* [example: "Albers Equal Area Conic"](http://en.wikipedia.org/wiki/Albers_projection)
+	
+![](images/albers-us.png)  
+<small><https://observablehq.com/@d3/conic-equal-area></small>
+
+## Map Projections {.flexbox}
+
+* Conformal (Preserves local angles)
+	* [example: "Peirce Quincuncial"](http://en.wikipedia.org/wiki/Peirce_quincuncial_projection)
+	
+![](images/peirce.png)  
+<small><https://observablehq.com/@d3/peirce-quincuncial></small>
+
+## Map Projections {.flexbox}
+
+* Conformal (Preserves local angles)
+	* [example: "Mercator"](http://en.wikipedia.org/wiki/Mercator_projection)
+	
+![](images/mercator.png)  
+<https://observablehq.com/@d3/mercator></small>
+
+## Map Projections: [Tissot's Indicatrix](https://en.wikipedia.org/wiki/Tissot%27s_indicatrix)
+
+:::: {.flexbox}
+::: {style="width:20%"}
+![](https://upload.wikimedia.org/wikipedia/commons/0/0e/Tissot_world_from_space.png)  
+<small>Orthographic</small>
+:::
+
+::: {style="width:20%"}
+![](https://upload.wikimedia.org/wikipedia/commons/8/87/Azimuthal_equidistant_projection_with_Tissot%27s_indicatrix.png)  
+<small>Azimuthal Equidistant</small>
+:::
+
+::: {style="width:20%"}
+![](https://upload.wikimedia.org/wikipedia/commons/2/24/Tissot_indicatrix_world_map_Mercator_proj.svg)  
+<small>Mercator</small>
+:::
+::: {} 
+&nbsp; 
+:::
+
+::: {style="width:20%"}
+![](http://map-projections.net/img/tissot-30-w/gringorten-20w.jpg)  
+<small>Peirce Quincuncial</small>
+:::
 ::::
 
-## Slide title
+:::: {.flexbox}
+::: {style="width:30%"}
+![](https://www.mdpi.com/geographies/geographies-01-00014/article_deploy/html/images/geographies-01-00014-g006-550.jpg)  
+<small>Albers</small>
+:::
+::: {style="width:25%"}
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Fuller_projection_with_Tissot%27s_indicatrix_of_deformation.png/300px-Fuller_projection_with_Tissot%27s_indicatrix_of_deformation.png)  
+<small>Dymaxion (<https://en.wikipedia.org/wiki/Dymaxion_map>)</small>
+:::
+::: {style="width:10%"} 
+&nbsp;
+:::
+::: {style="width:25%"}
+![](https://upload.wikimedia.org/wikipedia/commons/a/ab/World_map_of_prehistoric_human_migrations.jpg)  
+<small>Human migrations according to mitochondrial population genetics (millennia before present)</small>  
 
-text
+:::
+::::
 
-```{r}
-# code chunk
-```
+## {}
 
-text
+![](https://imgs.xkcd.com/comics/map_projections.png)
+
+<small><http://xkcd.com/977></small>
+
+## Map Scale
+
+**For a small area, earth's curvature can be ignored, and a map can use a single scale.**
+
+**For a large area, map projections cause any scale to be variable**
+
+![](https://www.e-education.psu.edu/natureofgeoinfo/sites/www.e-education.psu.edu.natureofgeoinfo/files/image/graphic_scales.gif)
+
+**Scale is often expressed as a ratio without units**
+
+1:250,000
+
+This concept is borrowed from print, where the dimensions of a printed map are constant.  For screen, since the physical dimensions of the image can vary with the screen, ratio scales are less useful.  Therefore, online, we tend to use graphic scale bars.
+
+## Map Scale
+
+**Content should be appropriate to the scale.**
+
+![](http://cs.joensuu.fi/pages/franti/dynamap/mapscale.gif)
+
+Modern mapping tools can dynamically control what content is visiable at each scale level, automatically.
+
+
+## Map Types
+
+* Symbol Maps
+	* Dot Map
+	* Bubble Map
+* Continuous Data
+	* Heatmaps
+	* Choropleth
+* Cartograms
+* Flow Maps
+
+## Map Types
+
+::: {.left-column}
+* Symbol Maps
+	* <mark>Dot Map</mark>
+	* Bubble Map
+* Continuous Data
+	* Heatmaps
+	* Choropleth
+* Cartograms
+* Flow Maps
+:::
+
+::: {.right-column-fat}
+![](http://1.bp.blogspot.com/-QexKECbtQ84/Unf1tVJRLJI/AAAAAAAAi3A/mE3U18inFFU/s523/mapsmania.gif)
+:::
+
+## Map Types
+
+::: {.left-column}
+* Symbol Maps
+	* Dot Map
+	* <mark>Bubble Map</mark>
+* Continuous Data
+	* Heatmaps
+	* Choropleth
+* Cartograms
+* Flow Maps
+:::
+
+::: {.right-column-fat}
+![](https://geochristian.files.wordpress.com/2008/11/counties2008nyt3.jpg)
+:::
+
+
+## Map Types
+
+::: {.left-column}
+* Symbol Maps
+	* Dot Map
+	* Bubble Map
+* Continuous Data
+	* <mark>Heatmaps</mark>
+	* Choropleth
+* Cartograms
+* Flow Maps
+:::
+
+::: {.right-column-fat}
+![](http://st1.bgr.in/wp-content/uploads/2014/01/google-maps-heat-map.jpg)  
+<small>Most photographed areas</small>
+:::
+
+## Map Types
+
+::: {.left-column}
+* Symbol Maps
+	* Dot Map
+	* Bubble Map
+* Continuous Data
+	* Heatmaps
+	* <mark>Choropleth</mark>
+* Cartograms
+* Flow Maps
+:::
+
+::: {.right-column-fat}
+![](https://upload.wikimedia.org/wikipedia/commons/f/f7/Australian_Census_2011_demographic_map_-_Australia_by_SLA_-_BCP_field_2715_Christianity_Anglican_Persons.svg)  
+<small>Australian_Census_2011: Anglicans as a proportion of the population</small>
+:::
+
+
+## Map Types
+
+::: {.left-column}
+* Symbol Maps
+	* Dot Map
+	* <mark>Bubble Map</mark>
+* Continuous Data
+	* Heatmaps
+	* <mark>Choropleth</mark>
+* Cartograms
+* Flow Maps
+::: 
+::: {.right-column-fat}
+![](http://geographyfieldwork.com/Choropleth2.gif)
+:::
+
+
+## Map Types
+
+::: {.left-column}
+* Symbol Maps
+	* Dot Map
+	* Bubble Map
+* Continuous Data
+	* Heatmaps
+	* Choropleth
+* <mark>Cartograms</mark>
+* Flow Maps
+::: 
+::: {.right-column-fat}
+![]()
+::: 
+
+
+## Map Types
+
+::: {.left-column}
+* Symbol Maps
+	* Dot Map
+	* Bubble Map
+* Continuous Data
+	* Heatmaps
+	* Choropleth
+* <mark>Cartograms</mark>
+* Flow Maps
+::: 
+::: {.right-column-fat}
+[https://en.wikipedia.org/wiki/Cartogram](https://en.wikipedia.org/wiki/Cartogram)  
+![](https://upload.wikimedia.org/wikipedia/commons/4/47/Cartlinearlarge.png) 
+::: 
+
+## Map Types
+
+::: {.left-column}
+* Symbol Maps
+	* Dot Map
+	* Bubble Map
+* Continuous Data
+	* Heatmaps
+	* Choropleth
+* Cartograms
+* <mark>Flow Maps</mark>
+::: 
+::: {.right-column-fat}
+Flow maps display flows (vectors fields: direction and magnitude)  
+<small><https://earth.nullschool.net> </small>   
+<iframe src="https://classic.nullschool.net/#current/wind/surface/level/orthographic=-81.65,30.48,2160"></iframe>
+
+::: 
+
+
