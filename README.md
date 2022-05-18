@@ -21,7 +21,8 @@ Monday, May 23, 9am-5pm
 Tuesday, May 24, 9am-5pm  
 Wednesday, May 25, 9am-12pm
 
-INSTRUCTORS John Drake (<jdrake@uga.edu>)  
+INSTRUCTORS
+John Drake (<jdrake@uga.edu>)  
 Éric Marty (<emarty@uga.edu>)
 
 This module presents basic principles and best practices for data
