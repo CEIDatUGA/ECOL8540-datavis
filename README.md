@@ -35,7 +35,8 @@ interactive visualizations, and workflows for publication-ready figures.
 
 **DAY 1: Monday, May 23**
 
-9:00 Lecture: [Introduction]()  
+9:00 Lecture:
+[Introduction](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/lectures/1_introduction.html)  
 9:40 Excercise: [Exercise 1]()  
 10:20 Break
 
@@ -108,3 +109,9 @@ interactive visualizations, and workflows for publication-ready figures.
     -   summarize epidemic trajectories, spaghetti plots, confidence
         intervals, distributions, etc.
 -   ?
+
+## Preparing Rstudio
+
+    install.packages("magrittr")
+    install.packages("knitr")
+    install.packages("kableExtra")
