@@ -1,0 +1,24 @@
+---
+title: "Multi-scale dynamics of COVID-19"
+author: "John M. Drake"
+date: "May 23, 2022"
+output: pdf_document
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+COVID-19 is a respiratory diseases caused by the virus SARS-CoV-2.
+SARS-CoV-2 originated in Wuhan, China in late 2019 and subsequently caused a worldwide pandemic leading to the death of tens of millions of people.
+The spatial spread of SARS-CoV-2 in the US followed a wave-like pattern in which new variants were typically reported first from urban and coastal regions and then flowed to rural and interior locations. 
+However, the spatial spread of SARS-CoV-2 within states was often idiosyncratic.
+
+The UGA COVID-19 working group has created a tracker allowing the user to visualize trends and download data sourced from various providers.
+These data may be accessed [online](https://www.covid19.uga.edu/tracker.html).
+Your task is to create a visualization to compare temporal trends in the number COVID-19 cases at the state level with trends of the individual counties in Georgia.
+Do the dynamics at the state level largely reflect the dynamics at key locations?
+Are there leading and lagging counties?
+Are there consistent patterns?
+How do the dynamics in the individual counties aggregate to produce a state-level pattern?

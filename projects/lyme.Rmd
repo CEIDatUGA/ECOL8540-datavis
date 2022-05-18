@@ -1,0 +1,20 @@
+---
+title: "Lyme Disease"
+author: "John M. Drake"
+date: "5/16/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Lyme disease is a tick-borne disease caused by the bacterium *Borrelia burgdorferi*. 
+*Borellia* is transmitted by by the Blacklegged Tick (*Ixodes scapularis*).
+Lyme disease was first identified in Connecticut in 1975 and has been spreading in the United Since since that time.
+Now, an average of 475,000 people are diagnosed with Lyme disease every year.
+
+The CDC has produced a county-level public data set of Lyme disease for the period from 2000 to 2019.
+These data may be accessed from the CDC website at https://www.cdc.gov/lyme/resources/datasurveillance/LD-Case-Counts-by-County-00-19.csv.
+Information about data collection and limitationss of surveillance are available at https://www.cdc.gov/lyme/stats/survfaq.html.
+Your task is to create a visualization of these data that quantifies and communicates how Lyme disease has spread throughout the US during this period.
