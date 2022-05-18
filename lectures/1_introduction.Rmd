@@ -1,0 +1,228 @@
+---
+title: "Ecology 8540<br>Computational Workshops"
+subtitle: "Module 2: Data visualization for ecology & epidemiology"
+author: "John Drake and Éric Marty "
+date: May 23, 2021<br>Materials at <https://github.com/CEIDatUGA/ECOL8540-datavis>
+output:
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+    transition: 0.1
+    css: main.css
+    includes:
+      in_header: header.html
+    self_contained: true
+---
+
+```{r include=FALSE}
+library(magrittr)
+library(knitr)
+library(kableExtra)
+```
+
+## Administrative details
+
+register:
+
+## Downloading Github repo, setting up R/Rstudio
+
+clone repo: <link>
+
+install packages:
+
+Slides: <link> and file location in repo
+
+## Course Overview
+
+learning objectives
+
+activities
+
+schedule
+
+# Introduction to Data Visualization
+
+## Purpose of Data Visualization
+        
+1. **Recording of Data**  
+	Collection of data in visual form (photographs, seismographs, etc.)
+	
+2. **Analysis of Data**  
+ 	Pattern discovery  
+	Error identification    
+	Contextualization 
+
+3. **Reasoning**  
+	Development and assessment of hypotheses  
+	Decision making  
+
+4. **Communication**  
+	Communicattion of findings (to the public or other researchers)  
+	Argument  
+	Storytelling  
+	Inspiration / Motivation  
+	Propaganda / Misinformation
+
+## Purpose of Data Visualization
+        
+1\. **Recording of Data**  
+
+:::: {.flexbox}
+::: {}
+![](https://upload.wikimedia.org/wikipedia/commons/1/14/HD.6D.635_%2812000265314%29.jpg)
+:::
+:::{}
+<small>Photograph of particle tracks in a bubble chamber,<br>with explanitory diagram. [info](https://goo.gl/vmfUCf)</small>
+:::
+::::
+
+## Purpose of Data Visualization
+
+1\. **Recording of Data**  
+
+:::: {.flexbox .vcenter}
+
+![](https://upload.wikimedia.org/wikipedia/commons/0/0f/Kinemetrics_seismograph.jpg)
+::::
+
+## Purpose of Data Visualization
+
+:::: {.flexbox}
+::: {}
+2\. **Analysis of Data**  
+
+- <mark>Pattern discovery</mark>  
+- Error identification    
+- Contextualization 
+
+:::  
+::: {}
+![](http://www.giss.nasa.gov/research/news/20140121/gistemp_nino_s.jpg)  
+<small>Chart of the temperature anomalies for 1950-2013, also showing the phase of the El Niño-La Niña cycle. [NASA](http://www.giss.nasa.gov/research/news/20140121/)</small>
+:::
+::::
+
+## Purpose of Data Visualization
+
+:::: {.flexbox}
+::: {}
+2\. **Analysis of Data**  
+
+- <mark>Pattern discovery</mark>  
+- Error identification    
+- Contextualization 
+
+:::  
+::: {}
+![](http://www.cse.iitk.ac.in/users/amit/books/img/sagan-eden_brain-mass-vs-body-mass.gif)  
+<small>Carl Sagan (*Dragons of Eden*)</small>
+:::
+::::
+
+## Purpose of Data Visualization
+
+:::: {.flexbox}
+::: {}
+2\. **Analysis of Data**  
+
+- Pattern discovery 
+- <mark>Error identification</mark>     
+- Contextualization 
+
+:::  
+::: {}
+![](http://mathworld.wolfram.com/images/eps-gif/OutlierScatterplot_1000.gif)  
+
+:::
+::::
+
+## Purpose of Data Visualization
+
+:::: {.flexbox}
+::: {}
+2\. **Analysis of Data**  
+
+- Pattern discovery 
+- Error identification     
+- <mark>Contextualization</mark> 
+
+:::  
+::: {}
+![](https://upload.wikimedia.org/wikipedia/commons/2/27/Snow-cholera-map-1.jpg)  
+<small>John Snow: Mapped positions of deaths from cholera in London.  
+The map revealed a cluster of cases around a water pump, with density of cases  
+decreasing with distance from the pump. 1854. [from Tufte 83]</small>
+:::
+::::
+
+## Purpose of Data Visualization
+
+:::: {.flexbox}
+::: {}
+2\. **Analysis of Data**  
+
+- Pattern discovery 
+- Error identification     
+- <mark>Contextualization</mark> 
+
+:::  
+::: {}
+![](https://upload.wikimedia.org/wikipedia/commons/1/17/Nightingale-mortality.jpg)  
+<small>Florence Nightingale: Diagram of the causes of mortality in the military.  
+The diagram led directly to the understanding of sanitation in public health,  
+and to drastically decreased mortality among soldiers.</small>
+:::
+::::
+
+## Purpose of Data Visualization
+
+:::: {.flexbox}
+::: {}
+2\. **Analysis of Data**  
+
+- Pattern discovery 
+- Error identification     
+- <mark>Contextualization</mark> 
+
+:::  
+::: {}
+![](https://upload.wikimedia.org/wikipedia/commons/5/52/Playfair_TimeSeries-2.png)  
+<small>William Playfair: trade-balance time-series chart, published in *Commercial and Political Atlas*, 1786.  [info](https://commons.wikimedia.org/wiki/File:Playfair_TimeSeries-2.png).</small>
+:::
+::::
+
+## Purpose of Data Visualization
+
+:::: {.flexbox}
+::: {}
+2\. **Analysis of Data**  
+
+- Pattern discovery 
+- Error identification     
+- <mark>Contextualization</mark> 
+
+:::  
+::: {style="width:75%;"}
+![](https://upload.wikimedia.org/wikipedia/commons/2/29/Minard.png)  
+<small>Charles Joseph Minard: Map (1869) showing the movements and the number of Napoleonic troops during the Russian campaign (1812-1813), with temperature on the return path.</small>
+:::
+::::
+
+## Purpose of Data Visualization
+
+:::: {.flexbox}
+::: {}
+2\. **Analysis of Data**  
+
+- Pattern discovery 
+- Error identification     
+- <mark>Contextualization</mark> 
+
+:::  
+::: {}
+![](https://datavizblog.files.wordpress.com/2013/06/minard-odt.jpg)  
+:::
+::::
+
+
+

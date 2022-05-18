@@ -1,0 +1,94 @@
+@import url(https://fonts.googleapis.com/css?family=Muli:200,300,400,200italic,300italic,400italic);        
+      @import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic);
+      @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,400italic);
+      
+iframe {
+  border: none;
+}
+
+slides > slide
+{
+  background: #fff !important;
+  border-radius: 1px;
+  font-family: 'Muli'; 
+  font-weight: 300
+}
+
+h1, h2 {
+  font-family: 'Muli'; 
+  font-weight: 200
+}
+
+slides > slide.dark {
+background: #000 !important;
+}
+
+img {
+  max-height: 420px; 
+  max-width: 100%; 
+  margin: 10px 10px;
+}
+
+pre, code {
+font-size: 95%;
+font-family: 'Roboto Mono', 'Source Code Pro', 'Courier New', monospace;
+color: #101010;
+background-color: #e6e6e6;
+}
+
+small {
+  font-size: 70%;
+  line-height: 50% !important;
+}
+
+.flex {
+  display: flex;
+}
+
+/* Two-column layout (20-80) */
+      .left-column {
+        width: 30%;
+        height: 92%;
+        float: left;
+      }
+      .right-column-fat {
+        width: 65%;
+        float: right;
+      }
+      
+/* Two-column layout (50-50) */
+      .left-column-50 {
+        width: 47%;
+        height: 92%;
+        float: left;
+      }
+      .right-column-50 {
+        width: 48%;
+        float: right;
+      }
+
+/* Three-column layout */
+      .column-30 {
+        width: 28%;
+        height: 92%;
+        padding-left: 5%;
+        float: left;
+      }
+
+      .column-60 {
+        width: 60%;
+        height: 92%;
+        padding-left: 5%;
+        float: left;
+      }
+
+
+      
+.footnotes {
+  position: absolute;
+  bottom: 1em;
+  margin-bottom: 10px;
+  width: 80%;
+  font-size: 0.6em;
+}
+
