@@ -44,19 +44,19 @@ schedule
 
 ## Purpose of Data Visualization
         
-1. **Recording of Data**  
+- **Recording of Data**  
 	Collection of data in visual form (photographs, seismographs, etc.)
 	
-2. **Analysis of Data**  
+- **Analysis of Data**  
  	Pattern discovery  
 	Error identification    
 	Contextualization 
 
-3. **Reasoning**  
+- **Reasoning**  
 	Development and assessment of hypotheses  
 	Decision making  
 
-4. **Communication**  
+- **Communication**  
 	Communicattion of findings (to the public or other researchers)  
 	Argument  
 	Storytelling  
@@ -65,7 +65,7 @@ schedule
 
 ## Purpose of Data Visualization
         
-1\. **Recording of Data**  
+- **Recording**  
 
 :::: {.flexbox}
 ::: {}
@@ -78,73 +78,62 @@ schedule
 
 ## Purpose of Data Visualization
 
-1\. **Recording of Data**  
+- **Recording**  
 
 :::: {.flexbox .vcenter}
 
 ![](https://upload.wikimedia.org/wikipedia/commons/0/0f/Kinemetrics_seismograph.jpg)
 ::::
 
-## Purpose of Data Visualization
+## Purpose of Data Visualization {.flexbox}
 
-:::: {.flexbox}
 ::: {}
-2\. **Analysis of Data**  
-
-- <mark>Pattern discovery</mark>  
-- Error identification    
-- Contextualization 
+- **Analysis **  
+  <mark>Pattern discovery</mark>  
+  Error identification    
+  Contextualization 
 
 :::  
 ::: {}
 ![](http://www.giss.nasa.gov/research/news/20140121/gistemp_nino_s.jpg)  
 <small>Chart of the temperature anomalies for 1950-2013, also showing the phase of the El Niño-La Niña cycle. [NASA](http://www.giss.nasa.gov/research/news/20140121/)</small>
 :::
-::::
 
-## Purpose of Data Visualization
+## Purpose of Data Visualization {.flexbox}
 
-:::: {.flexbox}
 ::: {}
-2\. **Analysis of Data**  
-
-- <mark>Pattern discovery</mark>  
-- Error identification    
-- Contextualization 
+- **Analysis **  
+  <mark>Pattern discovery</mark>  
+  Error identification    
+  Contextualization 
 
 :::  
 ::: {}
 ![](http://www.cse.iitk.ac.in/users/amit/books/img/sagan-eden_brain-mass-vs-body-mass.gif)  
 <small>Carl Sagan (*Dragons of Eden*)</small>
 :::
-::::
 
-## Purpose of Data Visualization
+## Purpose of Data Visualization {.flexbox}
 
-:::: {.flexbox}
 ::: {}
-2\. **Analysis of Data**  
-
-- Pattern discovery 
-- <mark>Error identification</mark>     
-- Contextualization 
+- **Analysis **  
+  Pattern discovery  
+  <mark>Error identification</mark>    
+  Contextualization 
 
 :::  
 ::: {}
 ![](http://mathworld.wolfram.com/images/eps-gif/OutlierScatterplot_1000.gif)  
 
 :::
-::::
 
-## Purpose of Data Visualization
+## Purpose of Data Visualization {.flexbox}
 
-:::: {.flexbox}
 ::: {}
-2\. **Analysis of Data**  
-
-- Pattern discovery 
-- Error identification     
-- <mark>Contextualization</mark> 
+- **Analysis**  
+  Pattern discovery 
+  Error identification     
+  <mark>Contextualization</mark> 
 
 :::  
 ::: {}
@@ -153,76 +142,424 @@ schedule
 The map revealed a cluster of cases around a water pump, with density of cases  
 decreasing with distance from the pump. 1854. [from Tufte 83]</small>
 :::
-::::
 
 ## Purpose of Data Visualization
 
-:::: {.flexbox}
-::: {}
-2\. **Analysis of Data**  
+::: {.left-column}
+- **Recording**  
 
-- Pattern discovery 
-- Error identification     
-- <mark>Contextualization</mark> 
+- **Analysis**  
+ 	Pattern discovery  
+	Error identification    
+	<mark>Contextualization/<mark> 
 
+- **Reasoning**  
+	Hypothesis assessment  
+	<mark>Decision making</mark>  
+
+- **Communication**  
+	Communication of findings  
+	<mark>Argument</mark>  
+	Storytelling  
+	Inspiration / Motivation  
+	Propaganda / Misinformation
 :::  
-::: {}
-![](https://upload.wikimedia.org/wikipedia/commons/1/17/Nightingale-mortality.jpg)  
-<small>Florence Nightingale: Diagram of the causes of mortality in the military.  
-The diagram led directly to the understanding of sanitation in public health,  
-and to drastically decreased mortality among soldiers.</small>
-:::
-::::
 
-## Purpose of Data Visualization
-
-:::: {.flexbox}
-::: {}
-2\. **Analysis of Data**  
-
-- Pattern discovery 
-- Error identification     
-- <mark>Contextualization</mark> 
-
-:::  
-::: {}
+::: {.right-column-fat}
 ![](https://upload.wikimedia.org/wikipedia/commons/5/52/Playfair_TimeSeries-2.png)  
 <small>William Playfair: trade-balance time-series chart, published in *Commercial and Political Atlas*, 1786.  [info](https://commons.wikimedia.org/wiki/File:Playfair_TimeSeries-2.png).</small>
 :::
-::::
 
 ## Purpose of Data Visualization
 
-:::: {.flexbox}
-::: {}
-2\. **Analysis of Data**  
+::: {.left-column}
+- **Recording**  
 
-- Pattern discovery 
-- Error identification     
-- <mark>Contextualization</mark> 
+- **Analysis**  
+ 	Pattern discovery  
+	Error identification    
+	<mark>Contextualization/<mark> 
 
+- **Reasoning**  
+	<mark>Hypothesis assessment</mark>  
+	<mark>Decision making</mark>  
+
+- **Communication**  
+	<mark>Communication of findings</mark>  
+	<mark>Argument</mark>  
+	<mark>Storytelling</mark>  
+	<mark>Inspiration / Motivation</mark>  
+	Propaganda / Misinformation
 :::  
-::: {style="width:75%;"}
+
+::: {.right-column-fat}
+![](https://upload.wikimedia.org/wikipedia/commons/1/17/Nightingale-mortality.jpg)  
+<small>Florence Nightingale: Diagram of the causes of mortality in the military in the East. 1858.  
+The diagram led directly to the understanding of sanitation in public health,  
+and to drastically decreased mortality among soldiers.</small>
+:::
+
+
+## Purpose of Data Visualization
+
+::: {.left-column}
+- **Recording**  
+
+- **Analysis**  
+ 	Pattern discovery  
+	Error identification    
+	<mark>Contextualization/<mark> 
+
+- **Reasoning**  
+	Hypothesis assessment  
+	Decision making 
+
+- **Communication**  
+	Communication of findings  
+	Argument  
+	<mark>Storytelling</mark>  
+	Inspiration / Motivation  
+	Propaganda / Misinformation
+::: 
+
+::: {.right-column-fat}
 ![](https://upload.wikimedia.org/wikipedia/commons/2/29/Minard.png)  
 <small>Charles Joseph Minard: Map (1869) showing the movements and the number of Napoleonic troops during the Russian campaign (1812-1813), with temperature on the return path.</small>
 :::
-::::
 
-## Purpose of Data Visualization
 
-:::: {.flexbox}
+## {.flexbox .vcenter}
+
+<img style="max-height:600px;" src="https://datavizblog.files.wordpress.com/2013/06/minard-odt.jpg"/>
+
+
+## Process of Data Visualization {.vcenter}
+
+
+### Visualization = DATA &rarr; IMAGE
+
+## Process of Data Visualization
+
+
+### Visualization = DATA <mark>&rarr;</mark> IMAGE
+
+## Process of Data Visualization
+
+### Visualization = DATA <mark>&rarr; MAPPING &rarr;</mark> IMAGE
+
+## Jeff Heer's Model of the Visualization Process {.flexbox}
+
 ::: {}
-2\. **Analysis of Data**  
+### Data 
 
-- Pattern discovery 
-- Error identification     
-- <mark>Contextualization</mark> 
+**Task**  
 
-:::  
-::: {}
-![](https://datavizblog.files.wordpress.com/2013/06/minard-odt.jpg)  
+- Questions, goals  
+- Assumptions
+
+**Data**  
+
+- Data model   
+- Conceptual model 
+- Data type 
+
+**Domain** 
+
+- Metadata  
+- Semantics  
+- Conventions  
 :::
-::::
 
+::: {} 
+### &rarr; &nbsp;&nbsp;
+:::  
+
+::: {}
+### MAPPING    
+
+**Data Transforms**  
+
+**Visual Encoding**  
+:::
+
+::: {} 
+### &rarr; &nbsp;&nbsp;
+:::  
+
+::: {}
+### IMAGE
+**Visual Channel**  
+
+**Graphical Marks**
+:::
+
+## Jeff Heer's Model of the Visualization Process
+
+::: {.left-column}
+### DATA 
+
+**Task**  
+
+- Questions, goals  
+- Assumptions
+
+**Data**  
+
+- <mark>Data model</mark>   
+- Conceptual model 
+- Data type 
+
+**Domain**
+
+- Metadata  
+- Semantics  
+- Conventions  
+:::
+
+::: {.right-column-fat}  
+### &nbsp;
+
+**Data models** are numerical descriptions of the data.  
+i.e. sets with operations
+
+Example: integers, with $+$ and $\times$ operators
+:::
+
+## Jeff Heer's Model of the Visualization Process
+
+::: {.left-column}
+### DATA 
+
+**Task**  
+
+- Questions, goals  
+- Assumptions
+
+**Data**  
+
+- Data model   
+- <mark>Conceptual model</mark> 
+- Data type 
+
+**Domain** 
+
+- Metadata  
+- Semantics  
+- Conventions  
+:::
+
+::: {.right-column-fat}
+
+**Conceptual models** are mental constructions (mental images),  
+including semantics and support reasoning.  
+
+::: {} 
+**Conceptual model** | **Data model**  
+----------|---------   
+Day of week | Integers [1 .. 7] 
+Location (xyz) | Triplets of floats (real numbers)
+:::  
+
+:::
+
+## Jeff Heer's Model of the Visualization Process
+
+::: {.left-column}
+### DATA 
+
+**Task**  
+
+- Questions, goals  
+- Assumptions
+
+**Data**  
+
+- Data model   
+- Conceptual model 
+- <mark>Data type</mark> 
+
+**Domain** 
+
+- Metadata  
+- Semantics  
+- Conventions  
+:::
+
+::: {.right-column-fat}
+### **N**ominal, **O**rdinal and **Q**uantitative
+
+**N: Nominal** (labels or categories) 
+
+- *Fruits: apples, oranges, ...*  
+
+**O: Ordered**
+
+- *Letter Grades: A, A-, B+, B, B-, ...*  
+
+**Q: Quantitative** (2 types:)
+
+- **Interval** (location of zero arbitrary; only *differences* can be compared)  
+	- *Dates: Jan, 19, 2006*
+	- *Location: (LAT 33.98, LONG -118.45)*  
+
+- **Ratio** (zero is fixed)
+	- *Physical measurements: Length, Mass, Temperature, ...* 
+	- *Counts and amounts*
+ 
+:::
+
+## Jeff Heer's Model of the Visualization Process
+
+::: {.left-column}
+### DATA 
+
+**Task**  
+
+- Questions, goals  
+- Assumptions
+
+**Data**  
+
+- Data model   
+- Conceptual model 
+- <mark>Data type</mark> 
+
+**Domain** 
+
+- Metadata  
+- Semantics  
+- Conventions  
+:::
+
+::: {.right-column-fat}
+### **N**ominal, **O**rdinal and **Q**uantitative
+
+**N: Nominal** (labels or categories) 
+
+- Operations: = ≠ *("An apple is not a pear")*  
+
+**O: Ordered**
+
+- Operations: = ≠ < > *("A grade of C is higher than a grade of D")*  
+
+**Q: Quantitative** (2 types:)
+
+- **Interval** (zero is arbitrary)  
+	- Operations: = ≠ < > - *("March 1 is 2 days before March 3")*  
+	- Uses relative scales of measure
+
+- **Ratio** (zero is fixed)
+	- Operations: = ≠ < > - % *("3kg is 1/2 of 6kg")*
+	- Uses absolute scales of measure
+ 
+:::
+
+## Jeff Heer's Model of the Visualization Process
+
+::: {.left-column}
+### DATA 
+
+**Task**  
+
+- Questions, goals  
+- Assumptions
+
+<mark>**Data**  
+
+- Data model   
+- Conceptual model 
+- Data type</mark> 
+
+**Domain** 
+
+- Metadata  
+- Semantics  
+- Conventions  
+:::
+
+::: {.right-column-fat}
+### *Example*  
+**Data Model**  
+Floating point numbers (32.5, 54.0, -17.3, ... )  
+**Conceptual Model**  
+Temperature (°C)  
+**Data Type**  
+N: Burned vs. Not-Burned  
+O: Hot, Warm, Cold  
+Q (interval): Temperature Value
+
+*Note: Temperature is either relative or absolute, depending on your view of temperature. Temperature (°C) treats temperature as relative to an arbitrary zero (thus, "twice as hot" is meaningless).*
+:::
+
+## Jeff Heer's Model of the Visualization Process
+
+::: {.left-column}
+### DATA 
+
+**Task**  
+
+- Questions, goals  
+- Assumptions
+
+<mark>**Data**  
+
+- Data model   
+- Conceptual model 
+- Data type</mark> 
+
+**Domain** 
+
+- Metadata  
+- Semantics  
+- Conventions  
+:::
+
+::: {.right-column-fat}
+### **Dimensionality**  
+
+One data point can have many dimensions (e.g. spatial coordinates).
+
+When a dimension is **quantitative** it is often called a **measure.**
+
+:::
+
+## Jeff Heer's Model of the Visualization Process
+
+::: {.left-column}
+### DATA 
+
+**Task**  
+
+- Questions, goals  
+- Assumptions
+
+<mark>**Data**  
+
+- Data model   
+- Conceptual model 
+- Data type</mark> 
+
+**Domain** 
+
+- Metadata  
+- Semantics  
+- Conventions  
+:::
+
+::: {.right-column-fat}
+### **Taxonomy**
+
+1D (sets and sequences)  
+1D (time)  
+2D (maps)  
+3D (shapes)  
+nD ("relational")  
+Trees (hierarchies)  
+Networks (graphs)  
+Others...  
+
+See Shneiderman: “The Eyes Have It: A Task by Data Type Taxonomy for Information Visualizations.” Proc. IEEE Conference on Visual Languages, Boulder 1996. [pdf](https://www.cs.umd.edu/~ben/papers/Shneiderman1996eyes.pdf)
+
+:::
 
 
