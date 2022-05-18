@@ -21,7 +21,7 @@ Monday, May 23, 9am-5pm
 Tuesday, May 24, 9am-5pm  
 Wednesday, May 25, 9am-12pm
 
-INSTRUCTORS
+INSTRUCTORS  
 John Drake (<jdrake@uga.edu>)  
 Éric Marty (<emarty@uga.edu>)
 
@@ -36,28 +36,28 @@ interactive visualizations, and workflows for publication-ready figures.
 
 **DAY 1: Monday, May 23**
 
-9:00 Lecture:
+09:00 Lecture:
 [Introduction](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/lectures/1_introduction.html)  
-9:40 Excercise: [Exercise 1]()  
+09:40 Excercise: [Exercise 1: Figure redesign]()  
 10:20 Break
 
-10:30 Lecture: [Data & Image Models]()  
-11:10 Excercise: [Exercise 2]()  
+10:30 Lecture: [The Image Model]()  
+11:10 Excercise: [Exercise 2: Time series]()  
 11:50 Wrap-up
 
 12:00 Lunch
 
-1:30 Lecture: [Chart
+01:30 Lecture: [Chart
 types](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/lectures/3_chart_types.html)  
-2:10 Excercise: [Exercise 3]()  
-2:50 Break
+02:10 Excercise: [Exercise 3: High-dimensional data]()  
+02:50 Break
 
-3:00 Group projects
+03:00 Group projects
 
 **DAY 2: Tuesday, May 24**
 
-9:00 Lecture: [Aesthetics & Color]()  
-9:40 Excercise: [Exercise 4]()  
+09:00 Lecture: [Aesthetics & Color]()  
+09:40 Excercise: [Exercise 4]()  
 10:20 Break
 
 10:30 Lecture: [Graphic Perception]()  
@@ -66,16 +66,16 @@ types](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/lectures/3_char
 
 12:00 Lunch
 
-1:30 Lecture: [Mapping]()  
-2:10 Excercise: [Exercise
+01:30 Lecture: [Mapping]()  
+02:10 Excercise: [Exercise
 6](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/lectures/6_maps.html)  
-2:50 Break
+02:50 Break
 
-3:00 Group projects
+03:00 Group projects
 
 **DAY 3: Wednesday, May 25**
 
-9:00 Group projects  
+09:00 Group projects  
 10:30 Break  
 10:40 Presentation of group projects
 
@@ -97,7 +97,7 @@ types](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/lectures/3_char
     2d heatmap. Issues: upper triangle, clustering, ordering, x = beta,
     y = virulence (model with disease induced mortality), R0 = color  
 5.  Workflows (Eric)  
-6.  Map (John)
+6.  Map (john)
 
 ## Group projects (John)
 
@@ -106,8 +106,8 @@ types](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/lectures/3_char
 -   COVID-19: Compare county and state-level patterns over time for the
     state of GA  
 -   COVID-19: Compare cases and mortality over time  
--   West Nile virus: County level virus data over time
--   Lyme disease: advance in last 2 decades
+-   West nile virus: County level virus data over time
+-   Lime disease: advance in last 2 decades
 -   Stochastic SIR model:
     -   summarize epidemic trajectories, spaghetti plots, confidence
         intervals, distributions, etc.
