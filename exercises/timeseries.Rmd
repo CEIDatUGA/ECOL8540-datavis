@@ -1,0 +1,20 @@
+---
+title: "Time series and annotation"
+author: "John M. Drake"
+date: "May 23, 2022"
+output: pdf_document
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+A common visualization task in epidemiology and disease ecology is to plot a record of case counts over time, often referred to as the *epidemic curve*. 
+The data are typically encoded with two variables, a date and the case count. 
+An epidemic curve is just an ordinary line graph in two dimensions.
+However, more complicated versions of the epidemic curve are often useful, for instance showing two curves simultaneously.
+If those curves are of different magnitudes then they require different y-axes.
+Additionally, we often find it useful to annotate time series.
+This exercise teaches some of these tasks.
+
