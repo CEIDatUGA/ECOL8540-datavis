@@ -1,0 +1,63 @@
+state.code,state.name,state.fips,HHS.region
+AL,Alabama,01,4
+AK,Alaska,02,10
+AZ,Arizona,04,9
+AR,Arkansas,05,6
+CA,California,06,9
+CO,Colorado,08,8
+CT,Connecticut,09,1
+DE,Delaware,10,3
+DC,District of Columbia,11,3
+FL,Florida,12,4
+GA,Georgia,13,4
+HI,Hawaii,15,9
+ID,Idaho,16,10
+IL,Illinois,17,5
+IN,Indiana,18,5
+IA,Iowa,19,7
+KS,Kansas,20,7
+KY,Kentucky,21,4
+LA,Louisiana,22,6
+ME,Maine,23,1
+MD,Maryland,24,3
+MA,Massachusetts,25,1
+MI,Michigan,26,5
+MN,Minnesota,27,5
+MS,Mississippi,28,4
+MO,Missouri,29,7
+MT,Montana,30,8
+NE,Nebraska,31,7
+NV,Nevada,32,9
+NH,New Hampshire,33,1
+NJ,New Jersey,34,2
+NM,New Mexico,35,6
+NY,New York,36,2
+NC,North Carolina,37,4
+ND,North Dakota,38,8
+OH,Ohio,39,5
+OK,Oklahoma,40,6
+OR,Oregon,41,10
+PA,Pennsylvania,42,3
+RI,Rhode Island,44,1
+SC,South Carolina,45,4
+SD,South Dakota,46,8
+TN,Tennessee,47,4
+TX,Texas,48,6
+UT,Utah,49,8
+VT,Vermont,50,1
+VA,Virginia,51,3
+WA,Washington,53,10
+WV,West Virginia,54,3
+WI,Wisconsin,55,5
+WY,Wyoming,56,8
+AS,American Samoa,60,9
+GU,Guam,66,9
+MP,Northern Mariana Islands,69,NA
+PR,Puerto Rico,72,2
+UM,U.S. Minor Outlying Islands,74,NA
+VI,U.S. Virgin Islands,78,NA
+NA,Virgin Islands,NA,2
+NA,Commonwealth of the Northern Mariana Islands,NA,9
+NA,Federated States of Micronesia,NA,9
+NA,Marshall Islands,NA,9
+NA,Republic of Palau,NA,9
