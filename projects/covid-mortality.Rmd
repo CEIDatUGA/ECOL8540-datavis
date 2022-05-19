@@ -7,7 +7,7 @@ urlcolor: blue
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval=FALSE)
 ```
 
 COVID-19 is a respiratory diseases caused by the virus SARS-CoV-2.
@@ -16,8 +16,34 @@ Vaccines for SARS-CoV-2 first became available in late 2020.
 SARS-CoV-2 vaccines are strongly protective against severe illness and death.
 As a result, since early 2021 there has been a decoupling between the number of SARS-CoV-2 cases and mortality due to COVID-19.
 
-The UGA COVID-19 working group has created a tracker allowing the user to visualize trends and download data sourced from various providers.
-These data may be accessed [online](https://www.covid19.uga.edu/tracker.html).
+The UGA COVID-19 working group has created a tracker allowing the user to visualize trends in data sourced from various providers. 
+These data, updated daily, may be viewed [online](https://www.covid19.uga.edu/tracker.html), and downloaded using the following code:
+
+```{r, }
+library(here) # for building file paths relative to project root directory ("here")
+
+source('R/get_covid_data.R')
+
+# Download, save and load data into R
+# The dataset is a very large file. 
+# For efficiency, the code below will download fresh data only once per day.
+
+# data filename for today (tagged with today's date)
+filename <- paste0("covid_data_",format(Sys.Date(), format="%Y%m%d"))
+fullpath <- here::here(paste0("data/",filename,'.rds')) 
+
+# load existing data, or download and save fresh data
+if (file.exists(fullpath)) {
+  # load data from saved file
+  covid_data <- readRDS(file = fullpath)    
+} else {
+  # download fresh data
+  covid_data <- get_covid_data()
+  # save newly downloaded data locally, in the "data/" folder
+  saveRDS(covid_data, fullpath)
+}
+```
+
 Your task is to create a visualization to investigate and quantify the decoupling of SARS-CoV-2 cases and mortality in the US.
 What pattern of decoupling do you observe?
 Did this decoupling happen in different ways in different parts of the country?

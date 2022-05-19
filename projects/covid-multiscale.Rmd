@@ -7,7 +7,7 @@ urlcolor: blue
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, eval=FALSE)
 ```
 
 COVID-19 is a respiratory diseases caused by the virus SARS-CoV-2.
@@ -15,8 +15,34 @@ SARS-CoV-2 originated in Wuhan, China in late 2019 and subsequently caused a wor
 The spatial spread of SARS-CoV-2 in the US followed a wave-like pattern in which new variants were typically reported first from urban and coastal regions and then flowed to rural and interior locations. 
 However, the spatial spread of SARS-CoV-2 within states was often idiosyncratic.
 
-The UGA COVID-19 working group has created a tracker allowing the user to visualize trends and download data sourced from various providers.
-These data may be accessed [online](https://www.covid19.uga.edu/tracker.html).
+The UGA COVID-19 working group has created a tracker allowing the user to visualize trends in data sourced from various providers. 
+These data, updated daily, may be viewed [online](https://www.covid19.uga.edu/tracker.html), and downloaded using the following code:
+
+```{r, }
+library(here) # for building file paths relative to project root directory ("here")
+
+source('R/get_covid_data.R')
+
+# Download, save and load data into R
+# The dataset is a very large file. 
+# For efficiency, the code below will download fresh data only once per day.
+
+# data filename for today (tagged with today's date)
+filename <- paste0("covid_data_",format(Sys.Date(), format="%Y%m%d"))
+fullpath <- here::here(paste0("data/",filename,'.rds')) 
+
+# load existing data, or download and save fresh data
+if (file.exists(fullpath)) {
+  # load data from saved file
+  covid_data <- readRDS(file = fullpath)    
+} else {
+  # download fresh data
+  covid_data <- get_covid_data()
+  # save newly downloaded data locally, in the "data/" folder
+  saveRDS(covid_data, fullpath)
+}
+```
+
 Your task is to create a visualization to compare temporal trends in the number COVID-19 cases at the state level with trends of the individual counties in Georgia.
 Do the dynamics at the state level largely reflect the dynamics at key locations?
 Are there leading and lagging counties?
