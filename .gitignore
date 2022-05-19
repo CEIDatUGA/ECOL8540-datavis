@@ -2,3 +2,4 @@
 .Rhistory
 .RData
 .Ruserdata
+covid_data_*.rds
