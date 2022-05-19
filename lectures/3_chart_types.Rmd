@@ -24,10 +24,10 @@ library(kableExtra)
 
 ## Slide title
 
-Place any needed images in `lectures/` or link to a URL.
+Place any needed images in `/images/` or link to a URL.
 
 :::: {.flexbox .vcenter}
-![](image.png)
+![](../images/image.png)
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Heatmap.png/560px-Heatmap.png)
 <small>caption</small>
 ::::

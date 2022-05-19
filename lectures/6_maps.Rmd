@@ -66,14 +66,14 @@ Therefore, there is no truthful map of the earth.
 * Azimuthal (Preserves direction and distance)
 	* [example: "Azimuthal Equidistant"](http://en.wikipedia.org/wiki/Azimuthal_equidistant_projection)
 
-![](images/az-eq.png)  
+![](../images/az-eq.png)  
 
 ## Map Projections {.flexbox}
 
 * Equal Area (Preserves area)
 	* [example: "Albers Equal Area Conic"](http://en.wikipedia.org/wiki/Albers_projection)
 	
-![](images/albers-us.png)  
+![](../images/albers-us.png)  
 <small><https://observablehq.com/@d3/conic-equal-area></small>
 
 ## Map Projections {.flexbox}
@@ -81,7 +81,7 @@ Therefore, there is no truthful map of the earth.
 * Conformal (Preserves local angles)
 	* [example: "Peirce Quincuncial"](http://en.wikipedia.org/wiki/Peirce_quincuncial_projection)
 	
-![](images/peirce.png)  
+![](../images/peirce.png)  
 <small><https://observablehq.com/@d3/peirce-quincuncial></small>
 
 ## Map Projections {.flexbox}
@@ -89,7 +89,7 @@ Therefore, there is no truthful map of the earth.
 * Conformal (Preserves local angles)
 	* [example: "Mercator"](http://en.wikipedia.org/wiki/Mercator_projection)
 	
-![](images/mercator.png)  
+![](../images/mercator.png)  
 <https://observablehq.com/@d3/mercator></small>
 
 ## Map Projections: [Tissot's Indicatrix](https://en.wikipedia.org/wiki/Tissot%27s_indicatrix)
