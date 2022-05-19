@@ -16,6 +16,6 @@ WNV is spread by mosquitoes in the genus *Culex*, particularly *Culex pipiens*, 
 *Culex* species are highly sensitive to environmental fluctuations, particularly precipitation, which is key to creating the habitats necessary for larval development.
 
 This leads to the hypothesis that early and wet summers may be associated with larger seasonal burdens of WNV disease.
-The CDC has published a [table](https://www.cdc.gov/westnile/statsmaps/cumMapsData.html#eight.) of annualized WNV disease cases by state from 1999-2020 at 
+The CDC has published a [table](https://www.cdc.gov/westnile/statsmaps/cumMapsData.html#eight) of annualized WNV disease cases by state from 1999-2020 at 
 The R package [`climate`](https://cran.r-project.org/web/packages/climate/vignettes/getstarted.html) allows for convenient downloading of meterological and hydrological data.
 Your task is to create a visualization to investigate the relationship between the onset of summer weather, precipitation, and state level WNV cases in the U.S. from 1999 to 2020.
