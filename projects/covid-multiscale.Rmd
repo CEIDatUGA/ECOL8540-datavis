@@ -18,7 +18,7 @@ However, the spatial spread of SARS-CoV-2 within states was often idiosyncratic.
 The UGA COVID-19 working group has created a tracker allowing the user to visualize trends in data sourced from various providers. 
 These data, updated daily, may be viewed [online](https://www.covid19.uga.edu/tracker.html), and downloaded using the following code:
 
-```{r, }
+```{r}
 library(here) # for building file paths relative to project root directory ("here")
 
 source('R/get_covid_data.R')
