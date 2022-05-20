@@ -26,16 +26,110 @@ library(kableExtra)
 
 Place any needed images in `/images/` or link to a URL.
 
-:::: {.flexbox .vcenter}
-![](../images/image.png)
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Heatmap.png/560px-Heatmap.png)
-<small>caption</small>
-::::
+::: {.flexbox .vcenter}
+![](../images/image.png) ![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Heatmap.png/560px-Heatmap.png) <small>caption</small>
+:::
 
-## Scatter plots
+## The goal is to see
+
+"The greatest value of a picture is when it forces us to notice what we never expected to see."
+
+-- John Tukey
+
+##Howard Wainer (1990) on Playfair and Tukey
+
+Three points of agreement 1. Impact is important 2. Understanding graphs is not always automatic
+
+Two categories of good graphs 1. A *strongly good graph* shows us everything we need to know just by looking at it 2. A *weakly good graph* shows us everything we need to know just by looking at it, once we know how to look 3. A graph can show us things easily that might not have been seen otherwise
+
+Legends and annotations can change a weakly good graph into a strongly good graph. Legends and annotations should not just label the graphical objects, but also identify what graphical features are *important*.
+
+## Wald's bullethold data
+
+Illustrating the issue of *survivorship bias*
+
+![](../images/wald.png)
+
+## One variable (distribution data)
+
+## Boxplot concept
+
+![](https://r-graph-gallery.com/img/other/boxplot_explanation.png) <small>Source: r-graph-gallery.com</small>
+
+## Boxplot example
+
+![](https://r-graph-gallery.com/23-add-colors-to-specific-groups-of-a-boxplot_files/figure-html/unnamed-chunk-1-1.png) <small>Source: r-graph-gallery.com</small>
+
+##Probability density function
+
+![](https://r-graph-gallery.com/21-distribution-plot-using-ggplot2_files/figure-html/unnamed-chunk-1-1.png) <small>Source: r-graph-gallery.com</small>
+
+##Ridgeline plots
+
+![](https://r-graph-gallery.com/294-basic-ridgeline-plot_files/figure-html/unnamed-chunk-5-1.png) <small>Source: r-graph-gallery.com</small>
+
+## Histograms
+
+![](https://r-graph-gallery.com/2-two-histograms-with-melt-colors_files/figure-html/unnamed-chunk-1-1.png) <small>Source: r-graph-gallery.com</small>
+
+##Two-dimensional data
+
+##Scatter plot
+
+![](https://r-graph-gallery.com/13-scatter-plot_files/figure-html/thecode-1.png) <small>Source: r-graph-gallery.com</small>
+
+##Scatter plot with trend line
+
+![](https://r-graph-gallery.com/44-polynomial-curve-fitting_files/figure-html/thecode-1.png) <small>Source: r-graph-gallery.com</small>
+
+##Scatter plot with connectors
+
+![](https://r-graph-gallery.com/connected_scatterplot_ggplot2_files/figure-html/thecode2-1.png) <small>Source: r-graph-gallery.com</small>
+
+##Heat map
+
+Used for displaying a data matrix
+
+![](https://r-graph-gallery.com/79-levelplot-with-ggplot2_files/figure-html/thecode-1.png) <small>Source: r-graph-gallery.com</small>
+
+##Modifications to heat map
+
+![](https://r-graph-gallery.com/img/other/density2d.png) <small>Source: r-graph-gallery.com</small>
+
+##Barplots for a mixture of nominal and quantitative data
+
+![](https://r-graph-gallery.com/209-the-options-of-barplot_files/figure-html/thecode4-1.png) <small>Source: r-graph-gallery.com</small>
+
+##Grouped barplots
+
+![](https://r-graph-gallery.com/211-basic-grouped-or-stacked-barplot_files/figure-html/thecode-1.png) <small>Source: r-graph-gallery.com</small>
+
+##Stacked barplots
+
+![](https://r-graph-gallery.com/211-basic-grouped-or-stacked-barplot_files/figure-html/thecode2-1.png) <small>Source: r-graph-gallery.com</small>
+
+##Three-dimensional data
+
+##Bubble plot
+
+![](https://r-graph-gallery.com/320-the-basis-of-bubble-plot_files/figure-html/thecode2-1.png) <small>Source: r-graph-gallery.com</small>
+
+##A bubble plot variation for four-dimensional data
+
+![](https://r-graph-gallery.com/320-the-basis-of-bubble-plot_files/figure-html/thecode3-1.png) <small>Source: r-graph-gallery.com</small>
+
+##Combination graphs
+
+
+##A boxplot with jittered data points
+
+![](https://r-graph-gallery.com/96-boxplot-with-jitter_files/figure-html/unnamed-chunk-1-1.png) <small>Source: r-graph-gallery.com</small>
+
+##Scatter plot with marginal distributions
+
+![](https://r-graph-gallery.com/277-marginal-histogram-for-ggplot2_files/figure-html/unnamed-chunk-1-1.png) <small>Source: r-graph-gallery.com</small>
+
 
 ```{r}
 plot(cars)
 ```
-
-
