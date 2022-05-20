@@ -1,0 +1,70 @@
+\usepackage{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{transparent}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta,positioning}
+\usetikzlibrary{arrows,snakes,backgrounds}
+\usetikzlibrary{fit,shapes.geometric}
+
+\definecolor{susceptible.color}{HTML}{91CBEF}
+\definecolor{exposed.color}{HTML}{CDBB43}
+\definecolor{latent.color}{HTML}{CDBB43}
+\definecolor{infectious.color}{HTML}{EE6677}
+\definecolor{asymptomatic.color}{HTML}{FFFFFF}
+\definecolor{diagnosed.color}{HTML}{666666}
+\definecolor{hospitalized.color}{HTML}{322F88}
+\definecolor{recovered.color}{HTML}{53A998}
+\definecolor{removed.color}{HTML}{53A998}
+\definecolor{deceased.color}{HTML}{832256}
+\definecolor{population.color}{HTML}{666666}
+\definecolor{environment.color}{HTML}{322F88}
+
+\definecolor{test.color}{HTML}{832256}
+
+\tikzstyle{every node}=[shape=circle, 
+    inner sep=1mm, inner sep=0mm, minimum size = 10mm, 
+    fill opacity = 0.5, draw opacity = 0.0, text opacity=1.0]
+
+\tikzstyle{marked}=[draw opacity = 1.0,line width=1mm]
+% \tikzstyle{attenuated}=[draw = white]
+\tikzstyle{stategroup}=[rounded corners=15,line width=10mm,
+        draw opacity = 0.3, fill opacity = 0]
+\tikzstyle{group}=[rounded corners=15,line width=10mm,
+        draw opacity = 0.1, fill opacity = 0]
+\tikzstyle{nodegroup}=[rectangle, rounded corners=20, inner sep = 2mm,
+        draw opacity = 0.15, fill opacity = .15, text = black]
+        
+        
+        
+\tikzstyle{invisible}=[draw = none]
+\tikzstyle{grouplabel}=[above = .75cm, align = left, fill opacity = 1, draw opacity = 1]
+
+\tikzstyle{susceptible}=[fill=susceptible.color, draw=susceptible.color]
+\tikzstyle{exposed}=[fill=exposed.color, draw=exposed.color]
+\tikzstyle{latent}=[fill=latent.color, draw=latent.color]
+\tikzstyle{infectious}=[fill=infectious.color, draw=infectious.color]
+\tikzstyle{infected}=[fill=infectious.color, draw=infectious.color]
+\tikzstyle{symptomatic}=[fill=infectious.color, draw=infectious.color]
+\tikzstyle{asymptomatic}=[fill=asymptomatic.color, draw=infectious.color]
+\tikzstyle{diagnosed}=[fill=diagnosed.color, draw=diagnosed.color]
+\tikzstyle{hospitalized}=[fill=hospitalized.color, draw=hospitalized.color]
+\tikzstyle{recovered}=[fill=recovered.color, draw=recovered.color]
+\tikzstyle{removed}=[fill=removed.color, draw=removed.color]
+\tikzstyle{deceased}=[fill=deceased.color, draw=deceased.color]
+\tikzstyle{population}=[fill=population.color, draw=population.color]
+\tikzstyle{environment}=[fill=environment.color, draw=environment.color]
+\tikzstyle{system}=[fill=none, draw=population.color, ultra thick, dashed]
+\tikzstyle{undefined}=[fill=white, draw=black, draw opacity = 1.0]
+
+\tikzstyle{modelgraph}=[
+    node distance=3.0 cm, 
+    every edge/.append style={every node/.style={align=center}},
+    every label/.append style={fill opacity = 1, draw opacity = 1}]
+    
+\newcommand{\testgroup}[3]{
+    \node[nodegroup, #1, #2, label={[#3.color]alsdjfg}] (foo) {};
+}
+

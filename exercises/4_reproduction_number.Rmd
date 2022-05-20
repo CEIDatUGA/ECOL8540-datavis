@@ -1,0 +1,288 @@
+---
+title: "Exercise 3: High Dimensional Data"
+author: Éric Marty
+date: "May 23, 2022"
+header-includes:
+   - \usepackage{array}
+   - \tikzstyle{custom}=[fill=white, draw=black]
+output:
+  pdf_document:
+    latex_engine: xelatex
+    includes:
+      in_header: ../modelgraph.tex
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("../R/modelgraph.R")
+```
+
+Complete Exercise 3a and either 3b or 3c.
+
+## Exercise 3a
+
+Folloiwing is the state diagram for an SEIR model with balanced birth and death. $\mu$ is the birth and death rate, indicating zero population change. $\beta$ is the transmission rate, $\sigma$ is the progression rate from exposed to infected, and $\gamma$ is the recovery rate. 
+
+```{r SEIR, echo = FALSE}
+states <- data.frame(
+  name = c(c("S", "E", "I", "R"),
+           c("in","Sout", "Eout", "Iout", "Rout")
+           ),
+  label = c(c("$S$", "$E$", "$I$", "$R$"),
+            rep("",5)
+            ),
+  class = c(c("susceptible", "exposed", "infectious", "recovered"),
+            rep("invisible",5)
+            ),
+  position = c("",paste0("right of=",c("S", "E", "I")),
+               c("above of=S",paste0("below of=",c("S", "E", "I", "R")))
+               )
+)
+
+flows <- data.frame(
+  from = c(c("S", "E", "I"),
+           c("in","S", "E", "I", "R")
+           ),
+  to = c(c("E", "I", "R"),
+           c("S", "Sout", "Eout", "Iout", "Rout")
+           ),
+  label = c(c("$\\beta S I$","$\\sigma E$", "$\\gamma I$"),
+           c("$\\mu (S+E+I+R)$", "$\\mu S$", "$\\mu E$", "$\\mu I$", "$\\mu R$")
+           ),
+  label.properties = c(c("above", "above", "above"),
+           c("right", "right", "right", "right", "right")
+           )
+)
+
+# Compile a snipet of LaTeX from the dataframes of states and flows
+SEIR <- modelgraph(states, flows)
+```
+
+`r SEIR`
+
+$\mathcal{R}_0$ for this model can be estimated as: 
+
+
+$$\mathcal{R}_0 = \frac{\beta\sigma}{(\mu+\gamma)(\mu+\sigma)},$$
+
+where $mu<<gamma$ and $\sigma$ is of the order of $\gamma$. 
+
+Your task is to design a plot to explore variation in $\mathcal{R}_0$ across and range of $\gamma$ and $\sigma$. 
+
+### Step 1: 
+
+Begin by fixing $\mu$ and $\beta$ and preparing a grid of $\gamma$ and $\sigma$. (You can use `expand.grid()` for this.)
+
+Calculate $\mathcal{R}_0$ for all values of the grid.
+
+Transform your data into a matrix of R_0 values, 
+with rows = levels of gamma, and columns = levels of mu.
+
+
+```{r, include=TRUE, message=FALSE}
+library(tidyverse)
+# Example with fixed beta, fixed mu, and grid of gamma and sigma
+beta <- .2
+mu <- .01
+gamma <- seq(.15,.3,length.out=10)
+sigma <- seq(.1,.2,length.out=10)
+results <- expand.grid(gamma = gamma, sigma = sigma)
+
+# Calculate R_0
+# Note: In tidyverse, use all_of(varname) to refer to an object outside the dataframe.
+# Use varname to refer to column of the dataframe.
+
+results <- results %>% 
+  mutate(R0 = all_of(beta) * sigma / ((all_of(mu) + gamma)*(all_of(mu) + sigma)))
+
+# Prepare a matrix
+results.wide <- results %>% 
+  pivot_wider(names_from = sigma, values_from = R0)
+results.matrix <- results.wide %>% 
+  select(c(-gamma)) %>% 
+  as.matrix()
+dimnames(results.matrix) <- list(gamma = results.wide$gamma,
+                                 sigma = colnames(results.matrix))
+
+```
+
+### Step 2: 
+
+Visualize.
+
+A matrix of smoothly changing values can be visualized as a "level plot" 
+(with values mapped to colors), or as a "contour plot" 
+(with contours drawn at set intervals), or both.
+
+A level plot can be made with the `lattice::levelplot()` or `graphics::filled.contour`. 
+Both functions can add contours to the level plot.
+
+**Questions to consider:**
+
+How fine of a grid do you need? What should the bounds be?
+
+What kind of color scale would be appropriate to represent $\mathcal{R}_0$? (Think carefully about what $\mathcal{R}_0$ represents, the critical value(s), boundaries, etc.)
+
+Does a log scale make sense for the independent variables?
+
+Does a log scale make sense for the dependet variable ( $\mathcal{R}_0$)? 
+If so, how would you construct a log color scale?
+
+
+```{r, echo=FALSE}
+# 1. Prepare an appropriate color scale...
+
+# In this case, we have chosen a color scale centered around R_0 = 1.
+# In addition, we map color to the log of R_0, 
+# since there are no values of R_0 < 0, and so that we can have an equally 
+# wide range of colors above and below R_0 = 1. 
+
+# define color palette function
+colorfunction <- colorRampPalette(
+  c("blue", "white", "red"), # start, middle and end colors
+  space = "Lab"  # specifies a perceptually linear color space (LAB)
+  ) # returns a function taking 1 argument (ncolors)
+
+# define data range
+logR0_lowerlim <- floor(min(log(results.matrix)))
+logR0_upperlim <- ceiling(max(log(results.matrix)))
+logR0_abslimit <- max(abs(logR0_lowerlim),abs(logR0_upperlim))
+breaks <- exp(seq(-logR0_abslimit, logR0_abslimit, length.out = 21))
+
+colors <- colorfunction(length(breaks)-1) # one fewer colors than breaks
+
+# 2. Define axes
+
+xtick.label <- format(as.numeric(colnames(results.matrix)),digits=2)
+xtick.pos <- seq(0,1,length.out = length(xtick.label))
+
+ytick.label <- format(as.numeric(rownames(results.matrix)),digits=2)
+ytick.pos <- seq(0,1,length.out = length(ytick.label))
+
+# 3. Plot
+
+filled.contour(results.matrix, xlim=c(-0.05,1.05),ylim=c(-0.05,1.05),axes = FALSE,
+               levels = breaks, # levels of R_0 defining contours
+               col = colors, # vector of colors (n = 1 - breaks)
+
+               # Draw main plot axes, labels, etc. 
+               plot.axes = {
+                 axis(1, at = xtick.pos, labels = xtick.label)
+                 axis(2, at = ytick.pos, labels = ytick.label)
+                 contour(log(results.matrix), add = TRUE, lwd = 1, 
+                         levels = log(breaks),
+                         labels = format(breaks, digits = 2))
+                 title(main = latex2exp::TeX(sprintf(r'($\mu = %f$, $\beta = %f$)', mu, beta)), 
+                       xlab = latex2exp::TeX(r'($\\sigma$)'),
+                       ylab = latex2exp::TeX(r'($\\gamma$)'))
+               },
+               
+               # Draw legend axes, labels, etc.
+               key.axes = {
+                 axis(2)
+                 axis(4,at=format(breaks,digits=2))
+                 title(main=latex2exp::TeX(r'($R_0$)'))
+               }
+               )
+
+```
+
+## Exercise 3b
+
+$\mathcal{R}_0$ for a model with both environmental and direct transmission
+can be estimated as 
+$$\mathcal{R}_0 = \frac{\beta}{(\mu + \gamma)} + \frac{\beta_v\omega}{\rho(\mu+\gamma)},$$
+where $\beta$ is the basic transmission rate, 
+$\beta_v$ is the environmental transmission rate, 
+$\omega$ is ? ,
+and $\rho$ is ? .
+
+How can you use the level plot approach to explore $\mathcal{R}_0$ across this parameter space? 
+
+Can you imagine alternate ways to visualize $\mathcal{R}_0$ across this parameter space? Sketch your ideas on paper.
+
+```{r, echo=FALSE}
+# Parameter grid
+beta <- .2
+beta_v <- .2
+rho <- .1
+omega <- .1
+mu <- .01
+gamma <- seq(.15,.3,length.out=10)
+sigma <- seq(.1,.2,length.out=10)
+
+results <- expand.grid(gamma = gamma, sigma = sigma)
+
+# Calculate R_0
+# Note: In tidyverse, use all_of(varname) to refer to an object outside the dataframe.
+# Use varname to refer to column of the dataframe.
+
+results <- results %>% 
+  mutate(R0 = 
+           ( all_of(beta) / ((all_of(mu) + gamma)) ) +
+           ( all_of(beta_v) * all_of(omega) / all_of(rho) * ((all_of(mu) + gamma)))
+         )
+
+# Prepare a matrix
+results.wide <- results %>% 
+  pivot_wider(names_from = sigma, values_from = R0)
+results.matrix <- results.wide %>% 
+  select(c(-gamma)) %>% 
+  as.matrix()
+dimnames(results.matrix) <- list(gamma = results.wide$gamma,
+                                 sigma = colnames(results.matrix))
+
+```
+
+\pagebreak
+$\mu =$ `r mu`, $\beta =$ `r beta`, $\beta_v =$ `r beta_v`, $\rho =$ `r rho`, $\omega =$ `r omega`
+
+```{r, echo=FALSE}
+# 2. Define axes
+
+xtick.label <- format(as.numeric(colnames(results.matrix)),digits=2)
+xtick.pos <- seq(0,1,length.out = length(xtick.label))
+
+ytick.label <- format(as.numeric(rownames(results.matrix)),digits=2)
+ytick.pos <- seq(0,1,length.out = length(ytick.label))
+
+# 3. Plot
+
+filled.contour(results.matrix, xlim=c(-0.05,1.05),ylim=c(-0.05,1.05),axes = FALSE,
+               levels = breaks, # levels of R_0 defining contours
+               col = colors, # vector of colors (n = 1 - breaks)
+
+               # Draw main plot axes, labels, etc. 
+               plot.axes = {
+                 axis(1, at = xtick.pos, labels = xtick.label)
+                 axis(2, at = ytick.pos, labels = ytick.label)
+                 contour(log(results.matrix), add = TRUE, lwd = 1, 
+                         levels = log(breaks),
+                         labels = format(breaks, digits = 2))
+                 title("", 
+                       xlab = latex2exp::TeX(r'($\\sigma$)'),
+                       ylab = latex2exp::TeX(r'($\\gamma$)'))
+               },
+               
+               # Draw legend axes, labels, etc.
+               key.axes = {
+                 axis(2)
+                 axis(4,at=format(breaks,digits=2))
+                 title(main=latex2exp::TeX(r'($R_0$)'))
+               }
+               )
+
+```
+
+## Excercise 3c
+
+For a simple COVID model with asymptomatic transmission
+
+$$\mathcal{R}_0 = \frac{\kappa \beta}{\gamma_A}+\frac{(1-\kappa)\beta}{\gamma}$$
+
+
+<!-- ![](../images/rollup.png) -->
+
+
+
