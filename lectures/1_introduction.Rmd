@@ -26,11 +26,33 @@ register:
 
 ## Downloading Github repo, setting up R/Rstudio
 
-clone repo: <link>
+**Step 1. Github credentials**
 
-install packages:
+You will need a GitHub account and a Personal Access Token (PAT) with "scope" set to "repo". If you do not have a GitHub PAT, you can create one as follows: 
 
-Slides: <link> and file location in repo
+a. Log into GitHub on the web.
+b. Under your user icon, go to Settings > Developer Settings > Personal Access Tokens
+c. Click `Generate new token`.
+d. Name the token something relevant, click the box next to `repo`, set an expiration date if desired, and click `Generate token`.  
+e. Copy the token and save it somewhere safe and permanent. You will not be able to look up the token after you close the window.
+
+You will use this token in place of a password during the next step.
+
+## Downloading Github repo, setting up R/Rstudio
+
+**Step 2. Log in to the Ecology RStudio Server with your class login and password**
+
+<https://rstudio.ecology.uga.edu/> 
+
+**Step 3. Clone the class repository into a new R Project:**
+
+File > New Project > Version Control > Git
+
+Repository URL: <https://github.com/CEIDatUGA/ECOL8540-datavis.git>
+
+Click "Browse" to choose or create the directory to put the project in. 
+
+When asked, enter your PAT in place of a password.
 
 ## Course Overview
 
