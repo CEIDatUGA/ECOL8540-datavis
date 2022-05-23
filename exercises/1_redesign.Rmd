@@ -1,0 +1,49 @@
+---
+title: "Exercise 1: Figure redesign"
+author: Éric Marty / John Drake
+date: "May 23, 2022"
+output:
+  pdf_document:
+    latex_engine: xelatex
+urlcolor: blue
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("../R/modelgraph.R")
+```
+
+## Exercise - Figure Redesign
+
+Resedign Figure 2 from the following paper: 
+
+Andrew M. Kramer, J. Tomlin Pulliam, Laura W. Alexander, Andrew W. Park, Pejman Rohani and John M. Drake. Spatial spread of the West Africa Ebola epidemic.   
+J. R. Soc. Interface <https://royalsocietypublishing.org/doi/10.1098/rsos.160294>
+
+Use pen/pencil and paper only to sketch your ideas. You may use color.
+
+Think about Mackinlay's effectiveness rankings when choosing how to map data variables to visual variables.
+
+Take conventions into consideration. Following common practice can make interpretation of a figure quicker.
+
+Sketch a representative sample of the new figure, with annotations as needed to explain your ideas.  
+
+
+\resizebox{\textwidth}{!}{
+\includegraphics{../images/rsos160294f02.jpg}
+}
+
+
+<small>[Figure 2](https://royalsocietypublishing.org/cms/asset/7033c629-6019-4045-9fd5-336b948a7cb0/rsos160294f02.jpg). Predicted day of infection for infected administrative units based on the best-fit model. The predicted day of infection is based on simulations from 24 April. For each node, the 95% prediction interval is in light blue with the interquartile range specified as dark blue and the median infection as a break. Dots represent the observed day of infection coloured by country. Infection locations used in fitting are left of the dotted line and infections subsequent to 1 October are to the right of the dotted line. Observations were within confidence bounds except for the two Nigerian states and the prefecture of Kouroussa in Guinea, which were predicted to become infected later than observed.</small>
+
+\pagebreak
+
+For context, figure 1 from the paper is included below:
+
+\resizebox{\textwidth}{!}{
+\includegraphics{../images/rsos160294f01.jpg}
+}
+
+<small>[Figure 1](https://royalsocietypublishing.org/cms/asset/05b9306a-2714-42f5-9b1d-ab7f45b541f3/rsos160294f01.jpg). Network of Ebola virus transmission probability in West Africa. Blue lines represent the transmission probability for the best-fit model, which includes effects of distance, population density and whether links cross the border surrounding Guinea, Liberia and Sierra Leone. Thickness is proportional to transmission probability, nodes are administrative unit centroids. The map is fully connected and invisible links represent orders of magnitude lower transmission probability. Administrative units used to fit the model are coloured by date of infection. Infections recorded after 1 October are coloured grey and were not included in the model fit.
+
