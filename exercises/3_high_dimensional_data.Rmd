@@ -151,3 +151,73 @@ The dataset includes a column for virus type. If you have time, encode the addit
 You can compare your solutions with the ones developed by the Coronavirus Working Group using the `rplotly` package: <https://www.covid19.uga.edu/context>
 
 See <https://bookdown.org/ndphillips/YaRrr/arranging-plots-with-parmfrow-and-layout.html> for more ways to build small multiples plots in R.
+
+To see a prtial solution, open the Rmd version of this document and run the hidden code chunk at this point in the document. 
+
+```{r, include=FALSE}
+
+multiplot <- function(data, vars) {
+  
+  # metadata
+  outbreaks <- data$outbreak %>% unique()
+  noutbreaks <- length(outbreaks) 
+  
+  # pre-filter
+  plotdata <- data %>% 
+    filter(parameter %in% vars) %>% 
+    select(outbreak, parameter, estimate, lowerBound, upperBound)
+  
+  par(mfcol=c(length(outbreaks),length(vars)))
+  
+  for(i in 1:length(vars)) {
+    for(j in 1:length(outbreaks)) {
+      pd <- plotdata %>%
+        filter(outbreak == outbreaks[j]) %>%
+        filter(parameter == vars[i]) %>%
+        arrange(estimate)
+      
+        nest <- nrow(pd) # number of estimates
+        plotmax <- max(pd$upperBound, na.rm = TRUE) # maximum range value for plotting
+        plotmin <- 0
+              
+        # Begin with an empty plot with a dummy data
+        if(is.infinite(plotmax)){
+          plot(x=0, y=0, type = "n", # dummy data
+             xlim=c(0,1), # axis limits
+             ylim = c(0,1), # axis limits
+             xlab=vars[i], # axis labels
+             ylab='study', yaxt='n', xaxt='n', cex.lab = .65) # axis labels
+          title(main=outbreaks[j])
+        }else{
+          plot(x=0, y=0, type = "n", # dummy data
+             xlim=c(plotmin,plotmax), # axis limits
+             ylim = c(0,nest), # axis limits
+             xlab=vars[i], # axis labels
+             ylab='study', yaxt='n', xaxt='n', cex.lab = .65) # axis labels
+        title(main=outbreaks[j])
+        axis(1) # add an x axis
+        # abline(v=1.0, lty=2) # add a vertical dotted reference line at R_0 = 1
+        points(x=pd$estimate, y = 1:nest)
+        for(i in 1:nest) {
+          lines(x = c(pd$lowerBound[i], pd$upperBound[i]), # endpoints (x)
+                y = rep(i, each=2), # endpoints (y)
+                lwd = 2) # line width
+          }
+        }
+        }
+        
+      }
+  }
+
+
+data <- read_csv('../data/outbreakparams.csv')  # read in csv as a "tibble" dataframe.
+vars <- c('R0', 'days_presymptomatic', 'days_infectious')
+# vars <- c('R0')
+
+data %>% 
+  filter(outbreak %in% outbreaks[c(1,5)]) %>% 
+  multiplot(vars)
+  
+
+```
+
