@@ -64,7 +64,8 @@ series](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/exercises/2_ti
 
 01:30 Lecture: [Visualizing high-dimensional
 data](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/lectures/3_high_dimensional_data.html)  
-02:10 Exercise: [Exercise 3: High-dimensional data]()  
+02:10 Exercise: [Exercise 3: High-dimensional
+data](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/exercises/3_high_dimensional_data.pdf)  
 02:50 Break
 
 03:00 Group projects
