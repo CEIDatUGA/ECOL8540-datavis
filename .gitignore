@@ -3,3 +3,4 @@
 .RData
 .Ruserdata
 covid_data_*.rds
+*.log
