@@ -1,0 +1,141 @@
+---
+title: "Ecology 8540<br>Computational Workshops"
+subtitle: "Module 2: Data visualization for ecology & epidemiology"
+author: "John Drake and Éric Marty "
+date: May 23, 2021<br>Materials at <https://github.com/CEIDatUGA/ECOL8540-datavis>
+output:
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+    transition: 0.1
+    css: main.css
+    includes:
+      in_header: header.html
+    self_contained: true
+---
+
+```{r include=FALSE}
+library(magrittr)
+library(knitr)
+library(kableExtra)
+```
+
+---
+
+# High-dimensional data visualization
+
+## Encoding Trivariate (3D) Data 
+
+### Surface Plot (with added color for redundancy)
+
+Best when z data is smoothly varying as a function of x and y.
+
+![](http://i.stack.imgur.com/0hVjA.png)
+
+## Encoding Trivariate (3D) Data 
+
+### 3D scatterplot 
+
+Can encode fully 3D data. Data can be hard to see.
+
+![](http://www.statmethods.net/graphs/images/s3d1.png)
+
+## Non-spatial 3D encodings
+
+Plotting 3D space on a 2D surface makes it hard to read data accurately.  
+
+Therefore, we give the 3rd variable (z) a non-spatial visual encoding:  
+
+- Hue (Nominal)  
+- Value (Ordinal, Quantitative)  
+- Size / Area (Quantitative)  
+- Shape (Nominal)   
+-  etc.
+
+Example: Bubble plots.
+
+## Encoding Multivariate (nD) Data
+
+### Trellis Plots 
+
+Subdivide the design space to compare multiple plots, usually with a nominal or ordinal variable used as the basis for subdividing the space. 
+
+![](https://www.fromthebottomoftheheap.net/assets/img/posts/curtis-simpson-nitrate-figure.png)
+## Encoding Multivariate (nD) Data
+
+### Small Multples 
+A generalization of the idea of a trellis plot. 
+
+![](http://www.randalolson.com/wp-content/uploads/usa-vs-japan-fertility-rates-small-multiple-900x1228.png)
+
+## Encoding Multivariate (nD) Data
+
+### Scatterplot Matrix
+A special case of the trellis plot, where the space is subdivided as a matrix of quantitative variables. 
+
+![](https://r-graph-gallery.com/98-basic-scatterplot-matrix_files/figure-html/thecode-1.png)
+
+## Encoding Multivariate (nD) Data
+
+### Scatterplot matrix  
++ extra dimensions
+
+![](https://stanford.edu/~mwaskom/software/seaborn/_images/scatterplot_matrix.png)
+
+## Encoding Multivariate (nD) Data
+
+### parallel coordinates
+
+![](https://r-graph-gallery.com/parallel-plot-ggally_files/figure-html/thecode2-1.png)
+
+## Encoding Multivariate (nD) Data
+
+### Radar plots
+
+![](https://r-graph-gallery.com/142-basic-radar-chart_files/figure-html/thecode2-1.png)
+## Strategies for nD visualization
+
+### Dimensional Reduction
+
+- Principal Components Analysis (PCA) 
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/GaussianScatterPCA.svg/1200px-GaussianScatterPCA.svg.png?20160210062755)
+
+- Multidimensional Scaling (MDS)  
+- Locally Linear Embedding (LLE)  
+- t-Dist. Stochastic Neighbor Embedding (t-SNE)  
+- Isomap  
+- Auto-Encoder Neural Networks Topological methods  
+...
+
+## Strategies for nD visualization:
+
+- Avoid encoding too many dimensions  
+- Reduce the problem space
+- Try small multiples first   
+- Try other established nD techniques  
+- Use interaction, linked views, multiple views, etc.
+
+Rarely does a single visualization answer all questions. Instead, the ability to generate appropriate visualizations quickly is key. 
+
+## Graphic Exploratory Data Analysis 
+
+Be wary of your assumptions. Start with them, but don't limit yourself by them.
+
+Start with **univariate summaries** (single variables).
+
+Next, start to consider relationships among variables.
+
+**Iterative Exploratory Process:**
+
+1. Formulate a question  
+2. Construct graphic to address question  
+3. Inspect “answer” and assess new questions  
+4. Repeat...  
+
+**Explore transformed data**
+
+- invert scale  
+- log scale or power scale  
+- normalize  
+- bin, grouped, etc.  
