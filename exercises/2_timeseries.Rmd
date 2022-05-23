@@ -49,4 +49,15 @@ Clearly, there were fewer cases in Commune 3. If we want to compare the pattern 
 
 **Exercise 3.** Create a version of this figure with a secondary y-axis for Commune 3.
 
+```{r}
+par(mar=c(5,4,4,4)+0.1)
+plot(data$Time, data$Commune1, type='l', xlab='Time', ylab='Communes 1 and 2')
+lines(data$Time, data$Commune2)
+par(new=TRUE)
+plot(data$Time, data$Commune3, type='l', col='red', xlab='', ylab='', axes=FALSE)
+axis(4, col='red')
+mtext('Commune 3', side=4, line=3)
+```
+
+
 **Exercise 4.** Create a version of this figure with a stacked plot comparing Commune 3 with Communes 1 and 2.
