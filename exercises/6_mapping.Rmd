@@ -9,3 +9,25 @@ urlcolor: blue
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+Maps that georeference non-spatial quantitative information may be especially difficult for the casual observer to properly interpret.
+Maps of COVID-19 incidence were produced during the pandemic and used by many people for both public and personal decision-making. 
+[One study](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2774639) looked at how knowledge risk perception and behavioral intentions were influenced by six different maps of COVID-19 prevalence in the US on May 11, 2022.
+
+\resizebox{\textwidth}{!}{
+\includegraphics{../images/covid-maps.png}
+}
+
+<small>[Figure 1](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2774639) Six maps of COVID-19 prevalence in the US on May 11, 2020 used in a study assessing the effectiveness of different map features on the public understanding of the COVID-19 pandemic.</small>
+
+Some key findings of the study included:
+
+- Maps of prevalance (per capita cases) translated poorly to knowledge about total cases.
+- Choropleth maps were superior to bubble plots, perhaps because they de-emphasize the relative importance of large population centers and rural areas
+- Small areas with high prevalence are hard to indicate on national maps
+- Popular understanding was improved by aggregating information to the state level
+- Maps of per capita prevalence were more informative than maps of total cases
+- Viewing maps (versus not view maps) had no measurable impact on individual risk perception
+- Viewing maps (versus not view maps) made viewers slightly more optimistic about societal risk
+- Viewing maps (versus not view maps) had no influenze on behavior
+- Viewing maps led to less accurate knowledge about total cases compared with having no information at all
