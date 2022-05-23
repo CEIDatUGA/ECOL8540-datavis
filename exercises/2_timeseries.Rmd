@@ -1,6 +1,6 @@
 ---
 title: "Exercise 2: Time series and annotation"
-author: "John M. Drake"
+author: Éric Marty \& John Drake
 date: "May 23, 2022"
 output: pdf_document
 urlcolor: blue
