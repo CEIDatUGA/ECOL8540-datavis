@@ -22,7 +22,11 @@ library(kableExtra)
 
 ## Administrative details
 
-register:
+register: ideas@uga.edu
+
+ECOL 8540  
+
+CCN: 63694
 
 ## Downloading Github repo, setting up R/Rstudio
 
@@ -56,11 +60,14 @@ When asked, enter your PAT in place of a password.
 
 ## Course Overview
 
-learning objectives
+### Learning Objectives
 
-activities
+By the end of this module, students should have a familiarity with the basic principles of data visualization. Students should be able to create figures covering a range of chart types and problems in ecology and infectious disease, applying best practices in data visualization.
 
-schedule
+Students will complete 6 in-class exercises on a range of topics.  In addition, students will work in groups to complete one longer project of their choosing. Groups will present completed projects to the class at the end of the course, and receive feedback from their peers.
+
+###  Schedule: 
+<https://github.com/CEIDatUGA/ECOL8540-datavis#schedule>
 
 # Introduction to Data Visualization
 
@@ -131,8 +138,10 @@ schedule
 
 :::  
 ::: {}
-![](http://www.cse.iitk.ac.in/users/amit/books/img/sagan-eden_brain-mass-vs-body-mass.gif)  
-<small>Carl Sagan (*Dragons of Eden*)</small>
+<!-- ![](http://www.cse.iitk.ac.in/users/amit/books/img/sagan-eden_brain-mass-vs-body-mass.gif)  -->
+![](https://slidetodoc.com/presentation_image_h/17a016af87881bfc5880a8dbc0573df3/image-135.jpg)
+
+<small>Carl Sagan: Encephalization quotient. From *Dragons of Eden*. 1977</small>
 :::
 
 ## Purpose of Data Visualization {.flexbox}
@@ -173,7 +182,7 @@ decreasing with distance from the pump. 1854. [from Tufte 83]</small>
 - **Analysis**  
  	Pattern discovery  
 	Error identification    
-	<mark>Contextualization/<mark> 
+	<mark>Contextualization</mark> 
 
 - **Reasoning**  
 	Hypothesis assessment  
@@ -200,7 +209,7 @@ decreasing with distance from the pump. 1854. [from Tufte 83]</small>
 - **Analysis**  
  	Pattern discovery  
 	Error identification    
-	<mark>Contextualization/<mark> 
+	<mark>Contextualization</mark> 
 
 - **Reasoning**  
 	<mark>Hypothesis assessment</mark>  
@@ -230,7 +239,7 @@ and to drastically decreased mortality among soldiers.</small>
 - **Analysis**  
  	Pattern discovery  
 	Error identification    
-	<mark>Contextualization/<mark> 
+	<mark>Contextualization</mark> 
 
 - **Reasoning**  
 	Hypothesis assessment  
@@ -584,4 +593,186 @@ See Shneiderman: “The Eyes Have It: A Task by Data Type Taxonomy for Informati
 
 :::
 
+# The Image Model
+
+---
+
+### Image = Visual language (system of signs)
+
+- Images are perceived as a set of signs  
+- Receiver decodes information from signs  
+
+---
+
+### Semiology (or semiotics) = the study of signs
+
+- sign = signifier+signified  
+- signifier = the form a sign takes  
+- signified = the concept the sign represents  
+
+<hr>
+
+example: **STOP**
+
+- signifier = the word "stop" (the letterforms, all caps)
+- signified = the concept of a requirement to stop
+
+example: 
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/STOP_sign.jpg/440px-STOP_sign.jpg" style="width: 15%;"/>
+
+## Bertin's Semiology of Graphics
+
+Jaques Bertin: *Sémiologie Graphique*. 1967
+
+*"Resemblance, order and proportion are the three signifieds in graphics."*  
+
+<br>
+
+**Resemblance** (of nominal data)  
+**Order** (of ordinal data)  
+**Proportion** (of quantitative data)  
+
+## Bertin's Semiology of Graphics
+
+::: {.left-column}
+![](../images/ABC.png)
+:::  
+
+::: {.right-column-fat}
+### What can this graphic encode?  
+1. A, B, C are distinguishable;
+2. B is between A and C;
+3. BC is twice as long as AB;
+
+Therefore, the graphic can encode nominal, ordinal, and quantitative variables.
+:::
+
+## Bertin's visual encoding variables
+
+![](https://ltb.itc.utwente.nl/uploads/studyarea/491/Pics_2015_jpg/Fig10_11.jpg)
+
+## Bertin's mappings  
+(for an expanded list of visual variables)
+
+::: {.left-column}
+Visual Variable | Data types
+---:|:---  
+Position<br>Length<br>Area<br>Volume | **NOQ**  
+Value<br>Hue | **NO (Q)<br> N (OQ)** 
+Texture | **N (O)**  
+Orientation | **N (O? Q?)**  
+Shape | **N (O?)**  
+Transparency<br>Blur | **N (O?)**  
+:::
+
+
+---
+
+::: {.left-column-50}  
+### Encodings
+::: 
+
+::: {.right-column-50}
+![](https://upload.wikimedia.org/wikipedia/commons/5/52/Playfair_TimeSeries-2.png)  
+:::
+
+---
+
+::: {.left-column-50}  
+### Encodings
+- Year (Q-interval) &rarr; X-axis (position)  
+- Currency (Q-ratio) &rarr; Y-axis (position)  
+  - zero-line included  
+- Imports/exports (N) &rarr; color  
+::: 
+
+::: {.right-column-50}
+![](https://upload.wikimedia.org/wikipedia/commons/5/52/Playfair_TimeSeries-2.png)  
+:::
+
+## Mackinlay's effectiveness rankings (simplified) :
+
+<small>Mackinlay, Jock. *[Automating the Design of Graphical
+Presentations of Relational Information.](https://research.tableau.com/sites/default/files/p110-mackinlay.pdf)* ACM Transactions on Graphics, Vol. 5, No. 2, April 1986. </small>
+
+:::{.column-30}
+**Quantitative** 
+
+Position  
+Length  
+Angle  
+Slope  
+Area  
+Volume  
+Value (color)  
+Saturation (color)  
+Hue (color)  
+Shape  
+:::
+:::{.column-30}
+**Ordinal**  
+
+Position  
+Value (color)  
+Saturation (color)  
+Hue (color)  
+Length  
+Angle  
+Slope  
+Area  
+Volume  
+Shape
+:::
+:::{.column-30}
+**Nominal**  
+
+Position  
+Hue (color)  
+Value (color)  
+Saturation (color)  
+Shape  
+Length  
+Angle  
+Slope  
+Area  
+Volume  
+:::
+
+## {.flexbox .vcenter}
+
+<img style="max-height:600px;" src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Minard%27s_Map_%28vectorized%29.svg"/>
+
+## {.flexbox .vcenter}
+
+<img style="max-height:600px;" src="https://datavizblog.files.wordpress.com/2013/06/minard-odt.jpg"/>
+
+---
+
+::: {.left-column-50}
+### Encodings
+Composite graphic (2 linked panels)
+
+**Top Panel:**
+
+Army Position (QxQ) &rarr; XY Position  
+
+- Longitude (Q) &rarr; X-axis  
+- Lattitude (Q) &rarr; Y-axis  
+
+Army Size (Q) &rarr; Width  
+Time (O) &rarr; Y-axis  
+Time (N, O)Color  
+
+**Bottom Panel**
+
+Longitude (Q) &rarr; X-axis  
+Time (O) &rarr; X-axis (right to left)   
+Temperature (Q) &rarr; Y-axis 
+::: 
+::: {.right-column-50}
+![](https://upload.wikimedia.org/wikipedia/commons/5/5f/Minard%27s_Map_%28vectorized%29.svg)
+:::
+
+# Next: Exercise 1
 
