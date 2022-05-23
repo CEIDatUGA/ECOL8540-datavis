@@ -14,9 +14,8 @@ knitr::opts_chunk$set(echo = TRUE)
 source("../R/modelgraph.R")
 ```
 
-## Exercise - Figure Redesign
 
-Resedign Figure 2 from the following paper: 
+Redesign Figure 2 from the following paper: 
 
 Andrew M. Kramer, J. Tomlin Pulliam, Laura W. Alexander, Andrew W. Park, Pejman Rohani and John M. Drake. Spatial spread of the West Africa Ebola epidemic.   
 J. R. Soc. Interface <https://royalsocietypublishing.org/doi/10.1098/rsos.160294>
