@@ -38,11 +38,11 @@ interactive visualizations, and workflows for publication-ready figures.
 
 09:00 Lecture:
 [Introduction](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/lectures/1_introduction.html)  
-09:40 Excercise: [Exercise 1: Figure redesign]()  
+09:40 Excercise: [Exercise 1: Figure redesign](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/exercises/1_redesign.pdf)  
 10:20 Break
 
 10:30 Lecture: [The Image Model]()  
-11:10 Excercise: [Exercise 2: Time series]()  
+11:10 Excercise: [Exercise 2: Time series](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/exercises/2_timeseries.pdf)  
 11:50 Wrap-up
 
 12:00 Lunch
