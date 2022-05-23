@@ -125,6 +125,49 @@ Used for displaying a data matrix
 
 ![](https://r-graph-gallery.com/320-the-basis-of-bubble-plot_files/figure-html/thecode3-1.png) <small>Source: r-graph-gallery.com</small>
 
+## Part-whole relationsips
+
+## Pie chart
+
+![](https://r-graph-gallery.com/piechart-ggplot2_files/figure-html/thecode-1.png) <small>Source: r-graph-gallery.com</small>
+
+## Donut chart
+
+![](https://r-graph-gallery.com/130-ring-or-donut-chart_files/figure-html/thecode-1.png) <small>Source: r-graph-gallery.com</small>
+
+
+## Waffle plot
+
+![](https://r-charts.com/en/part-whole/waffle-chart-ggplot2_files/figure-html/waffle-chart-colors-ggplot2.png) <small>Source: r-charts.com</small>
+
+
+## Hierarchical data
+
+## Treemap
+
+Used for **nested hierarchical** data
+
+![](https://https://r-graph-gallery.com/236-custom-your-treemap_files/figure-html/thecode-1.png) <small>Source: r-graph-gallery.com</small>
+
+## Dendrogram
+
+Used for **clustered** or **evolutionary** data
+
+![](https://r-graph-gallery.com/340-custom-your-dendrogram-with-dendextend_files/figure-html/thecode2A-1.png) <small>Source: r-graph-gallery.com</small>
+
+## Circular dendrogram
+
+![](https://r-graph-gallery.com/339-circular-dendrogram-with-ggraph_files/figure-html/thecode8-1.png) <small>Source: r-graph-gallery.com</small>
+
+## Small multiples (faceting)
+
+![](https://i1.wp.com/www.sharpsightlabs.com/wp-content/uploads/2018/04/voucher-small-multiple-map_gelman-600x600.png) <small>Source: https://www.r-bloggers.com/2018/04/why-you-should-master-the-small-multiple-chart/</small>
+
+## Pairs plot
+
+![](https://intro2r.com/Rbook_files/figure-html/plot25-1.png) <small>Source: https://intro2r.com/simple-base-r-plots.html/</small>
+
+
 ## Combination graphs
 
 
@@ -135,4 +178,41 @@ Used for displaying a data matrix
 ## Scatter plot with marginal distributions
 
 ![](https://r-graph-gallery.com/277-marginal-histogram-for-ggplot2_files/figure-html/unnamed-chunk-1-1.png) <small>Source: r-graph-gallery.com</small>
+
+
+## Maps
+
+## Choropleth map
+
+![](https://r-graph-gallery.com/175-choropleth-map-cartography-pkg_files/figure-html/thecode-1.png) <small>Source: r-graph-gallery.com</small>
+
+## Hexbin
+
+![](https://r-graph-gallery.com/328-hexbin-map-of-the-usa_files/figure-html/thecode5-1.png) <small>Source: r-graph-gallery.com</small>
+
+## Cartogram
+
+![](https://r-graph-gallery.com/331-basic-cartogram_files/figure-html/thecode4-1.png) <small>Source: r-graph-gallery.com</small>
+
+## Map flows
+
+![](https://r-graph-gallery.com/how-to-draw-connecting-routes-on-map-with-r-and-great-circles_files/figure-html/thecode6-1.png) <small>Source: r-graph-gallery.com</small>
+
+
+## Networks (graphs)
+
+## Undirected graph
+
+![](https://r-graph-gallery.com/248-igraph-plotting-parameters_files/figure-html/thecode3-1.png) <small>Source: r-graph-gallery.com</small>
+
+## Directed graph 
+
+![](https://r-graph-gallery.com/257-input-formats-for-network-charts_files/figure-html/thecode2-1.png) <small>Source: r-graph-gallery.com</small>
+
+## Graphs provide multiple visual channels
+
+![](https://r-graph-gallery.com/251-network-with-node-size-based-on-edges-number_files/figure-html/thecode2-1.png) <small>Source: r-graph-gallery.com</small>
+
+
+
 
