@@ -321,3 +321,13 @@ Flow maps display flows (vectors fields: direction and magnitude)
 ::: 
 
 
+## Tools: 
+
+TODO: 
+
+raster vs shape data
+
+rgdal, sp
+
+
+

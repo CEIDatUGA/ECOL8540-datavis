@@ -31,3 +31,20 @@ Some key findings of the study included:
 - Viewing maps (versus not view maps) made viewers slightly more optimistic about societal risk
 - Viewing maps (versus not view maps) had no influenze on behavior
 - Viewing maps led to less accurate knowledge about total cases compared with having no information at all
+
+
+# prompts
+
+present info about both prev asnd tot case
+
+locates infection in a way relevent to both public policy and individual decision making (consider scale)
+(finer scale is not necessarily better)
+
+todo: 
+
+load covid data,   
+generate basic choropleth etc.,   
+eleborate prompts
+
+
+
