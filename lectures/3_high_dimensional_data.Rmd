@@ -20,7 +20,6 @@ library(knitr)
 library(kableExtra)
 ```
 
----
 
 # High-dimensional data visualization
 
@@ -93,20 +92,24 @@ A special case of the trellis plot, where the space is subdivided as a matrix of
 ### Radar plots
 
 ![](https://r-graph-gallery.com/142-basic-radar-chart_files/figure-html/thecode2-1.png)
+
 ## Strategies for nD visualization
 
 ### Dimensional Reduction
 
+::: {.left-column-50}  
 - Principal Components Analysis (PCA) 
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/GaussianScatterPCA.svg/1200px-GaussianScatterPCA.svg.png?20160210062755)
-
 - Multidimensional Scaling (MDS)  
 - Locally Linear Embedding (LLE)  
 - t-Dist. Stochastic Neighbor Embedding (t-SNE)  
 - Isomap  
 - Auto-Encoder Neural Networks Topological methods  
 ...
+:::
+
+::: {.right-column-50}  
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/GaussianScatterPCA.svg/1200px-GaussianScatterPCA.svg.png?20160210062755)
+:::  
 
 ## Strategies for nD visualization:
 
@@ -128,9 +131,9 @@ Next, start to consider relationships among variables.
 
 **Iterative Exploratory Process:**
 
-1. Formulate a question  
-2. Construct graphic to address question  
-3. Inspect “answer” and assess new questions  
+1. Formulate a question.  
+2. Construct a graphic to address the question.  
+3. Inspect the graphical "answer" and formulate new questions.    
 4. Repeat...  
 
 **Explore transformed data**
