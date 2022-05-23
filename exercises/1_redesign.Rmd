@@ -1,6 +1,6 @@
 ---
 title: "Exercise 1: Figure redesign"
-author: Éric Marty / John Drake
+author: Éric Marty \& John Drake
 date: "May 23, 2022"
 output:
   pdf_document:
