@@ -79,23 +79,35 @@ library(grid) # viewport, pushViewport
 library(stringr) # string substitutions
 library(pals) # stevens.pinkgreen colors
 
-mapdate <- "2022-05-18"
+mapdate <- "2020-05-18"
+
+# Population data
+county_metadata <- read_csv("../data/county_metadata.csv")
+
+# need a location column in the format "statename,countyname"
+county_metadata <- county_metadata %>% 
+  mutate(location = paste0(tolower(state.name),",",tolower(county.name)))
+
+covid_county$location <- tolower(covid_county$location) %>% 
+                                        stringr::str_replace("_",",") 
+
 covid_county_wide <- covid_county %>% 
   filter(date == mapdate) %>% 
   pivot_wider(names_from = variable, values_from = value) %>% 
-  select(location, Daily_Cases, Daily_Deaths)
+  select(location, Daily_Cases, Daily_Deaths) %>% 
+  left_join(county_metadata, by="location") %>% 
+  mutate(Daily_Cases_per100k = 100000 * Daily_Cases / population.2020) %>% 
+  mutate(Daily_Deaths_per100k = 100000 * Daily_Deaths / population.2020) 
 
-covid_county_wide$location <- tolower(covid_county_wide$location) %>% 
-                                        stringr::str_replace("_",",") 
-
+# Colors
 colorfunction <- stevens.pinkgreen # bivariate color function
 nbins <- 3
 
-breaks.cases <- classIntervals(covid_county_wide$Daily_Cases, 
+breaks.cases <- classIntervals(covid_county_wide$Daily_Cases_per100k, 
                                n=nbins,
                                style='equal') # equal breaks across range of data
 
-breaks.deaths <- classIntervals(covid_county_wide$Daily_Deaths,
+breaks.deaths <- classIntervals(covid_county_wide$Daily_Deaths_per100k,
                                n=nbins,
                                style='equal') # equal breaks across range of data
 
@@ -104,6 +116,9 @@ covid_county_wide$class.deaths <- findCols(breaks.deaths)
 
 covid_county_wide <- covid_county_wide %>% 
   mutate(class.joint = class.cases + nbins*(class.deaths-1))
+
+covid_county_df <- as.data.frame(covid_county_wide)
+rownames(covid_county_df) <- covid_county_df$location
 
 covidmap <- mapplot(location ~ class.joint, data = covid_county_wide,
               colramp=colorfunction, 
@@ -114,6 +129,7 @@ covidmap <- mapplot(location ~ class.joint, data = covid_county_wide,
                         projection = "tetra"),
               scales = list(draw = FALSE))
 print(covidmap)
+
 ```
 
 ```{r, echo = FALSE, eval = FALSE}
