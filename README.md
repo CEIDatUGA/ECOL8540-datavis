@@ -95,8 +95,8 @@ Perception](https://github.com/CEIDatUGA/ECOL8540-datavis/blob/master/lectures/5
 **DAY 3: Wednesday, May 25**
 
 09:00 Group projects  
-10:30 Break  
-10:40 Presentation of group projects
+10:50 Break  
+11:00 Presentation of group projects
 
 ## Group projects
 
