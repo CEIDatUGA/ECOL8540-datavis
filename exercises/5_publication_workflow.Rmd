@@ -1,0 +1,75 @@
+---
+title: "Exercise 5: Workflow for publication-ready figures"
+author: Éric Marty
+date: "May 24, 2022"
+output:
+  pdf_document:
+    latex_engine: xelatex
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Below, you will find a workflow and boilerplate R code for generating a publication-ready figure for PLoS journals. The idea is to encode all the figure requirements (fonts, font sizes, figure widths, etc.) as variables outside of your plot, and pass these to the PDF graphics device and plot.  
+
+Use one of the figures you have developed in this class. Prepare and export the figure to PDF following the boilerplate code for PLoS.
+
+Suppose your paper has been rejected by PLoS, and you have decided to submit the paper to a new journal. Your task is to choose a journal you would like to submit to, look up their figure guidelines, and modify the boilerplate code to reflect the journal's requirements for fonts, font sizes, and figure dimensions. Export to PDF. 
+
+
+
+
+### Recommended workflow for publication ready figures:
+
+1. Use the PDF device, setting the figure dimensions, font and default font size in the call to `pdf()`. Ensure all text in your plot (inside the call to `pdf()`) fits the publisher's allowed size range (for example, by specifying a multiple of the default font size using the `cex` property).
+
+Note: R has only 3 built-in fonts: Times, Helvetica and Courier. If you want to avoid installing fonts, use one of these three. See <http://blog.revolutionanalytics.com/2012/09/how-to-use-your-favorite-fonts-in-r-charts.html> for more on installing fonts and embedding them in pdf's.
+
+2. If a TIFF is required, it will often be required to use "LZW" compression. Open the saved pdf file in GIMP (Linux, Mac) or Photoshop (Mac, Windows). Export as TIFF with the LZW option checked. See the section **Alternate figure export workflows** for a way to export to tiff directly from R. (Note, this is less reliable.)
+
+Here is an example R script using `pdf()` to draw a figure conforming to [PLOS figure guidelines](http://journals.plos.org/plosone/s/figures): 
+
+```{R, eval = FALSE}
+# Typography
+## Font
+font.family <- "Times" # Must be allowed by publisher and must be installed on your system.
+## Font Sizes
+font.sizes <- seq(from = 8, # publisher's minimum point size (points)
+                 to = 12, # publisher's maximum point size (points) 
+                 length.out = 5) # give yourself a range of font sizes to work with
+font.size.normal <- mean(font.sizes)
+font.scales <- font.sizes/mean(font.sizes)
+names(font.scales) <- names(font.sizes) <- c("XS", "S", "M", "L", "XL") # named vector of sizes
+
+# Figure dimensions
+figure.widths <- c(min=2.63, page=7.5, column=5.2) # in inches, as defined by publisher
+figure.heights <- c(min=1, page=8.75) # in inches, as defined by publisher
+
+# PDF output
+pdf(
+ file = "fig1.pdf", # full path and filename of the file to save
+ title = "Figure 1", # displayed in title bar of PDF readers
+ width = figure.widths['page'], # full width, in inches
+ height = figure.heights['page']*.7, # 70% of full height, in inches
+ family = font.family, # defined above
+ pointsize = font.size.normal # default (normal) size of text (in points). Defined above.
+)
+
+# Put your plots here. Specify a font scale factor of XS, S, M, L, or XL:
+plot(0:10, ann=FALSE, cex=font.scales['M'])
+legend(cex=font.scales['XS'], ...) # etc.
+
+# close PDF file
+invisible(dev.off())
+```
+
+### Alternate figure export workflows:
+
+The `tiff()` device can be used directly, although this is less reliable than the pdf().
+```
+tiff(filename = "fig1.tiff", res = 300, compression = "lzw", height=5.2, width=6, units="in")
+```
+
+`ggplot2` makes it easier to save a single plot in multiple formats. 
