@@ -211,7 +211,7 @@ ytick.pos <- seq(0,1,length.out = length(ytick.label))
 # then it draws the legend ("key").
 # We can pass axis() and title() functions to the main plot and legend as follows:
 
-(results.matrix, 
+filled.contour(results.matrix, 
                axes = FALSE, # remove box around plot, clear axes from plot and legend
                levels = breaks, # levels of R_0 defining contours
                col = colors, # vector of colors (n = 1 - breaks)
