@@ -35,7 +35,16 @@ Some key findings of the study included:
 Perhaps most problematic is the difficulty distinguishing between places where transmission is high, indicated by high prevalence, versus where mortality is high, which might be locations with more vulnerable populations or where health systems are being compromised. 
 
 =======
-Here is an interesting mapping trick! The following code uses a two dimensional color map to plot both variation in prevalence (blue) and variation in mortality (red or magenta). Since blue and red combine to make purple, we can distinguish locations that are high in prevalance (blue), mortality (red), or both (purple).
+
+Here is an interesting mapping trick! The following code uses a two dimensional (bivariate) color scale to map both variation in prevalence (pink) and variation in mortality (green). The pink and green combine to make a deeper blue color, so we can distinguish locations that are high in prevalance (pink), mortality (green), or both (blue).
+
+![](../images/pinkgreen.png)
+
+
+Stevens, Josh. 2015. “Bivariate Choropleth Maps: A How-to Guide.” Blog. Josh Stevens. <https://www.joshuastevens.net/cartography/make-a-bivariate-choropleth-map/>.
+
+<https://cran.r-project.org/web/packages/pals/vignettes/bivariate_choropleths.html>
+
 
 **Exercise 1.** Use this code to create a map showing both prevalence and mortality. Look closely at the map. What patterns do you see? Are there "hot spots"? What might explain the variation that you observe? Annotate the map to indicate any key features.
 
@@ -49,17 +58,63 @@ Download this file from dropbox, and place it in the `data` folder of your R Pro
 
 <https://www.dropbox.com/s/umv6887fzxozf6g/covid_data_20220519.rds?dl=0>
 
-## Code
+## Data
 
 ```{r}
 covid_data <- readRDS("../data/covid_data_20220519.rds") # edit path as needed
   
 covid_county <- covid_data$county_dat # US county level data
-covid_county <- covid_data$us_dat # US state level
-covid_county <- covid_data$world_dat # World data by country
 
 ```
 
+## Bivariate Color
+
+
+```{r, warnings=FALSE}
+library(tidyverse)
+library(latticeExtra) # USCancerRates, mapplot
+library(maps) # map
+library(classInt) # classIntervals, findCols
+library(grid) # viewport, pushViewport
+library(stringr) # string substitutions
+library(pals) # stevens.pinkgreen colors
+
+mapdate <- "2022-05-18"
+covid_county_wide <- covid_county %>% 
+  filter(date == mapdate) %>% 
+  pivot_wider(names_from = variable, values_from = value) %>% 
+  select(location, Daily_Cases, Daily_Deaths)
+
+covid_county_wide$location <- tolower(covid_county_wide$location) %>% 
+                                        stringr::str_replace("_",",") 
+
+colorfunction <- stevens.pinkgreen # bivariate color function
+nbins <- 3
+
+breaks.cases <- classIntervals(covid_county_wide$Daily_Cases, 
+                               n=nbins,
+                               style='equal') # equal breaks across range of data
+
+breaks.deaths <- classIntervals(covid_county_wide$Daily_Deaths,
+                               n=nbins,
+                               style='equal') # equal breaks across range of data
+
+covid_county_wide$class.cases <- findCols(breaks.cases)
+covid_county_wide$class.deaths <- findCols(breaks.deaths)
+
+covid_county_wide <- covid_county_wide %>% 
+  mutate(class.joint = class.cases + nbins*(class.deaths-1))
+
+covidmap <- mapplot(location ~ class.joint, data = covid_county_wide,
+              colramp=colorfunction, 
+              breaks=seq(from=0.5, by=1, length=nbins*nbins+1),
+              xlab="",
+              colorkey=FALSE,
+              map = map("county", plot = FALSE, fill = TRUE,
+                        projection = "tetra"),
+              scales = list(draw = FALSE))
+print(covidmap)
+```
 
 ```{r, echo = FALSE, eval = FALSE}
 library(tidyverse)
@@ -92,5 +147,6 @@ county_map <- function(data, variable, legend = "", title = "") {
     county_choropleth(state_zoom = zoom, legend = legend, title = title)
 }
 
+mutate(color = rgb(1-technology, 1-maximalism, 1-belief))
 
 ```
