@@ -35,16 +35,64 @@ Some key findings of the study included:
 
 # prompts
 
-present info about both prev asnd tot case
+present info about both prev and tot case
 
 locates infection in a way relevent to both public policy and individual decision making (consider scale)
 (finer scale is not necessarily better)
 
-todo: 
+# todo: 
 
-load covid data,   
 generate basic choropleth etc.,   
 eleborate prompts
 
+# Covid Data
 
+Download this file from dropbox, and place it in the `data` folder of your R Project.
+
+<https://www.dropbox.com/s/umv6887fzxozf6g/covid_data_20220519.rds?dl=0>
+
+```{r}
+covid_data <- readRDS("../data/covid_data_20220519.rds") # edit path as needed
+  
+covid_county <- covid_data$county_dat # US county level data
+covid_county <- covid_data$us_dat # US state level
+covid_county <- covid_data$world_dat # World data by country
+
+```
+
+# choropleths
+
+```{r}
+library(tidyverse)
+library(choroplethr)
+library(choroplethrMaps)
+
+# GA county level data
+GA_county <- covid_county %>% 
+  filter(location == "Georgia",
+         source == "JHU") %>% 
+  
+latest_date <- GA_county$date %>% max()
+
+GA_county %>% 
+  filter(variable %in% c("Daily_Cases", "Daily_Deaths")) %>% 
+  filter(date == latest_date)
+  
+
+covid_county <- covid_data$county_dat
+
+## join data do fips
+
+#county_choropleth(state_zoom = zoom, legend = legend, title = title)
+
+county_map <- function(data, variable, legend = "", title = "") {
+  zoom <- data$state.name %>% unique() %>% tolower()
+  master_dataset$state.name %>% unique()
+  data %>% select(region = fips, value = variable) %>% 
+    mutate(region = as.numeric(region)) %>% 
+    county_choropleth(state_zoom = zoom, legend = legend, title = title)
+}
+
+
+```
 
