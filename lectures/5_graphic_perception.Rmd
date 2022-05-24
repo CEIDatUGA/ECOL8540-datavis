@@ -1260,4 +1260,39 @@ Gestalt
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UfA3ivLK_tE" frameborder="0" allowfullscreen></iframe>
 
 
+# Workflows
+
+## Education & Public Outreach (print)
+
+Reproducibility is secondary, but you should still preserve a record of steps.
+
+EPO materials should still be data-accurate.
+
+* make basic data plots in R
+* save as or export as PDF
+* open PDF's in a drawing program (Inkscape or Adobe Illustrator)
+* release clipping masks, ungroup, etc.
+* all plot elements are "vector art" and can be scaled up without loss
+(may be burried)
+
+## Interactivity
+
+Interactive plots and dashboards can be made in R using `shiny` (with a considerable learning curve). A simple and powerful way to generate interactive plots is with Plotly, using the `rplotly` package. 
+
+An example R script that generates an interactive dashbaord is provided in `R/interactive_example.R`
+
+Plots made with ggplot can easily be made interactive by passing them to plotly's `ggplotly` function.
+
+## Reproducible Figures for Pubication (print)
+
+Many journals will accept PDF files for figures. PDF gives you the maximum control over the details of your plot (relative sizes, fonts, etc.), and will always print with no loss of resolution. If the journal requires a TIFF, the PDF can be converted to a high resolution TIFF. 
+
+Encode all the journal figure requirements (fonts, font sizes, figure widths, etc.) as variables outside of your plot.
+
+Use the PDF graphics device `pdf()` to capture your plot.
+
+Pass graphic variables to the PDF graphics device `pdf()` and to the plot. 
+
+Full workflow in `exercises/5_publication_workflow.Rmd`
+
 
