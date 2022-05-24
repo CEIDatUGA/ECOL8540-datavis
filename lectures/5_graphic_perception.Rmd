@@ -23,13 +23,9 @@ library(kableExtra)
 
 # Graphic Perception
 
-## Theory:
+---
 
-<http://datavis-sp16.github.io/lectures/graphicperception>
-
---- 
-
-**Physics** = the sutdy of physical phenomena  
+**Physics** = the study of physical phenomena  
 
 **Psychophysics** = the study of the *perception* of physical phenomena  
 
@@ -502,24 +498,24 @@ Change Blindness
 
 :::  
 
-## {}
+## Stevens' Power Law
 
-**Stevens' Power Law**<footnote>Stevens, S. S. (1957). On the psychophysical law. Psychological Review, 64(3), 153-181:  <http://dx.doi.org/10.1037/h0046162></footnote>. 
+Psychophysics is the quantitative description of the relationship between physical stimuli and perception (response).
 
 $\psi(I) = kI^\alpha$
 
-<div class="notes">
-Psychophysics = quantitative description of relationship between physical stimuli and perception (response).
+Stevens' Power Law describes the subjective response $\psi$ to the magnitude of physical stimulus $I$.  
 
-Subjective response $\psi$ to magnitude of physical stimulus $I$.  
+Stevens fit power laws as a first approximation to experimental data.   
 
-Stevens fit power laws as first approximation to experimental data.   
-
-Data collected by asking for subject ratios of 2 stimuli.  
-Subsequent researchers come up with different alphas.  
+Data were collected by asking subjects to provide subjective ratios in response to pairs of stimuli.  
+Subsequent researchers come up with different values of $\alpha$.  
 Responses are highly subjective for some stimuli.  
 Wilkinson has a good discussion in Grammar of Graphics.
-</div>
+
+<small>Stevens, S. S. (1957). On the psychophysical law. Psychological Review, 64(3), 153-181:  <http://dx.doi.org/10.1037/h0046162></small>
+
+## Stevens' Power Law
 
 ```{r echo=FALSE}
 # data
@@ -533,7 +529,7 @@ for(i in 1:nrow(stevens)){
 }
 
 # subset
-stevens.subset <- stevens[c(9,10,8,11),]
+stevens.subset <- stevens[c(9,10,8,1,11,12,13,14,30,33),]
 
 # plot
 text.offset <- 50
@@ -568,6 +564,13 @@ for(i in 1:nrow(stevens.subset)){
 
 ```
 
+---
+
+```{r echo=FALSE}
+library(magrittr)
+knitr::kable(stevens[,1:3], align = 'rcl') %>% 
+  kableExtra::scroll_box(width = "500px", height = "600px")
+```
 
 ## Take-away:
 
@@ -628,6 +631,36 @@ Angle
 Slope  
 Volume
 </div>
+
+## Perceptually uniform pitch-loudness scale
+
+<div class="column-60">
+<iframe frameborder="0" seamless="seamless" scrolling="no" src="https://plot.ly/~eric.marty/168.embed"> </iframe>
+</div>
+
+<div class="column-30">
+<a href="http://blog.ericmarty.com/public/images/SPL-contours.svg">
+<image src="http://blog.ericmarty.com/public/images/SPL-contours.svg"></img></a><br>
+
+*31.5 Hz to 12,500 Hz, **equal SPL** (horizontal line on left plot):*<br>
+<audio controls>
+  <source src="http://blog.ericmarty.com/public/sweep_31.5-12500Hz.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio>
+
+*31.5 Hz to 12,500 Hz at **equal loudness** (80 phon equal loudness contour):*<br>
+<audio controls>
+  <source src="http://blog.ericmarty.com/public/sweep_31.5-12500Hz_eq_loudness.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio>
+
+</div>
+
+
+
+
+
+
 
 ## {}
 
@@ -901,16 +934,6 @@ Change Blindness
 
 :::
 
-
-
-
-
-
-
-
-## Theory Part 2
-
-<http://datavis-sp16.github.io/lectures/graphicperception2>
 
 ## {}
 

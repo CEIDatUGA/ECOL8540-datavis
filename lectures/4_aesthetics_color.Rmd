@@ -139,6 +139,40 @@ original - redundant = "the good part"
 
 ![](../images/chartjunk.png)
 
+## "Exaggeration Factor" 
+(modified from Tufte's "Lie Factor")
+
+$$
+\text{Data Ratio } (D) = \frac{d_2}{d_1}
+$$
+$$
+\text{Graphic Ratio }(G) = \frac{g_2}{g_1}
+$$
+$$
+E = \frac{G}{D} = \frac{g_2/g_1}{d_2/d_1}
+$$
+
+Truth: $E = 1$ or $\log_2 E = 0$
+
+---
+
+![](https://raw.githubusercontent.com/Datavis-sp16/Datavis-sp16.github.io/master/lectures/integrity/perspective_distortion.png)
+
+## Exaggeration in the oil barrel graph:
+
+### Ignoring perspective
+
+$$\log_2 E_{height} = 0.20$$
+$$\log_2 E_{area} = 2.87$$
+$$\log_2 E_{volume} = 5.53$$
+
+### In perspective:
+
+$$\log_2 E_{height} = -0.97$$
+$$\log_2 E_{area} = 0.54$$
+$$\log_2 E_{volume} = 2.04$$
+
+
 # Color
 
 ## Perceptually uniform color scales
