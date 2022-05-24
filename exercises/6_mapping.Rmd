@@ -23,28 +23,21 @@ Maps of COVID-19 incidence were produced during the pandemic and used by many pe
 Some key findings of the study included:
 
 - Maps of prevalance (per capita cases) translated poorly to knowledge about total cases.
-- Choropleth maps were superior to bubble plots, perhaps because they de-emphasize the relative importance of large population centers and rural areas
-- Small areas with high prevalence are hard to indicate on national maps
-- Popular understanding was improved by aggregating information to the state level
-- Maps of per capita prevalence were more informative than maps of total cases
-- Viewing maps (versus not view maps) had no measurable impact on individual risk perception
-- Viewing maps (versus not view maps) made viewers slightly more optimistic about societal risk
-- Viewing maps (versus not view maps) had no influenze on behavior
-- Viewing maps led to less accurate knowledge about total cases compared with having no information at all
+- Choropleth maps were superior to bubble plots, perhaps because they de-emphasize the relative importance of large population centers and rural areas.
+- Small areas with high prevalence are hard to indicate on national maps.
+- Popular understanding was improved by aggregating information to the state level.
+- Maps of per capita prevalence were more informative than maps of total cases.
+- Viewing maps (versus not view maps) had no measurable impact on individual risk perception.
+- Viewing maps (versus not view maps) made viewers slightly more optimistic about societal risk.
+- Viewing maps (versus not view maps) had no influence on behavior.
+- Viewing maps led to less accurate knowledge about total cases compared with having no information at all.
 
+Perhaps most problematic is the difficulty distinguishing between places where transmission is high, indicated by high prevalence, versus where mortality is high, which might be locations with more vulnerable populations or where health systems are being compromised. 
 
-# prompts
+Here is an interesting mapping trick! The following code uses a two dimensional color map to plot both variation in prevalence (blue) and variation in mortality (red or magenta). Since blue and red combine to make purple, we can distinguish locations that are high in prevalance (blue), mortality (red), or both (purple).
 
-present info about both prev asnd tot case
+**Exercise 1.** Use this code to create a map showing both prevalence and mortality. Look closely at the map. What patterns do you see? Are there "hot spots"? What might explain the variation that you observe? Annotate the map to indicate any key features.
 
-locates infection in a way relevent to both public policy and individual decision making (consider scale)
-(finer scale is not necessarily better)
+**Exercise 2.** Choose some different dates and plot the change in the two-color map as a series of small multiples. Do you observe any temporal trends?
 
-todo: 
-
-load covid data,   
-generate basic choropleth etc.,   
-eleborate prompts
-
-
-
+**Exercise 3.** This map is based on government boundaries (counties) and is not a regular tiling. As a result, the *resolution* of the map differs from place to place. How does this affect your interpretation of these results? Are there any ways in which this variation may be misleading?
