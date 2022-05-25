@@ -67,8 +67,7 @@ covid_county <- covid_data$county_dat # US county level data
 
 ```
 
-## Bivariate Color
-
+## Solution
 
 ```{r, warnings=FALSE}
 library(tidyverse)
@@ -77,48 +76,47 @@ library(maps) # map
 library(classInt) # classIntervals, findCols
 library(grid) # viewport, pushViewport
 library(stringr) # string substitutions
-library(pals) # stevens.pinkgreen colors
+library(pals) # stevens.pinkgreen (a bivariate color palette)
 
 mapdate <- "2020-05-18"
 
 # Population data
 county_metadata <- read_csv("../data/county_metadata.csv")
 
-# need a location column in the format "statename,countyname"
+# need a location column in the format "countyname,statename"
 county_metadata <- county_metadata %>% 
   mutate(location = paste0(tolower(state.name),",",tolower(county.name)))
 
-covid_county$location <- tolower(covid_county$location) %>% 
-                                        stringr::str_replace("_",",") 
+covid_county <- covid_county %>% 
+  mutate(location = paste0(tolower(state),",",tolower(county)))
 
 covid_county_wide <- covid_county %>% 
   filter(date == mapdate) %>% 
   pivot_wider(names_from = variable, values_from = value) %>% 
-  select(location, Daily_Cases, Daily_Deaths) %>% 
+  select(location, Total_Cases, Total_Deaths) %>% 
   left_join(county_metadata, by="location") %>% 
-  mutate(Daily_Cases_per100k = 100000 * Daily_Cases / population.2020) %>% 
-  mutate(Daily_Deaths_per100k = 100000 * Daily_Deaths / population.2020) 
+  mutate(Total_Cases_per100k = 100000 * Total_Cases / population.2020) %>% 
+  mutate(Total_Deaths_per100k = 100000 * Total_Deaths / population.2020) 
 
 # Colors
 colorfunction <- stevens.pinkgreen # bivariate color function
 nbins <- 3
 
-breaks.cases <- classIntervals(covid_county_wide$Daily_Cases_per100k, 
+breaks.cases <- classIntervals(na_if(log(covid_county_wide$Total_Cases_per100k),-Inf), 
                                n=nbins,
                                style='equal') # equal breaks across range of data
 
-breaks.deaths <- classIntervals(covid_county_wide$Daily_Deaths_per100k,
+breaks.deaths <- classIntervals(na_if(log(covid_county_wide$Total_Deaths_per100k),-Inf),
                                n=nbins,
                                style='equal') # equal breaks across range of data
 
-covid_county_wide$class.cases <- findCols(breaks.cases)
-covid_county_wide$class.deaths <- findCols(breaks.deaths)
-
-covid_county_wide <- covid_county_wide %>% 
-  mutate(class.joint = class.cases + nbins*(class.deaths-1))
-
+c <- findCols(breaks.cases)
+d <- findCols(breaks.deaths)
+j <- replace_na(c,0) + replace_na(nbins*(d-1),0)
+covid_county_wide$class.joint <- j %>% na_if(0)
+  
 covid_county_df <- as.data.frame(covid_county_wide)
-rownames(covid_county_df) <- covid_county_df$location
+# rownames(covid_county_df) <- covid_county_df$location
 
 covidmap <- mapplot(location ~ class.joint, data = covid_county_wide,
               colramp=colorfunction, 
@@ -128,7 +126,16 @@ covidmap <- mapplot(location ~ class.joint, data = covid_county_wide,
               map = map("county", plot = FALSE, fill = TRUE,
                         projection = "tetra"),
               scales = list(draw = FALSE))
-print(covidmap)
+
+covidlegend <- levelplot(matrix(1:(nbins*nbins), nrow=nbins), 
+                         axes=FALSE, col.regions=colorfunction(),
+                         xlab="Cummulative Cases per 100k", ylab="Cummulative Deaths per 100k", 
+                         cuts=8, colorkey=FALSE,
+                         scales=list(draw=0))
+
+par(mfrow=c(1,2))
+covidmap
+covidlegend
 
 ```
 
